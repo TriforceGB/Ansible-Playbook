@@ -27,5 +27,5 @@
   
   - name: test directory
     file:
-      path: "~/"
+      path: "~/test"
       state: directory
