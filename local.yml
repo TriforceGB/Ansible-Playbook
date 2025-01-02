@@ -3,6 +3,17 @@
   become: true
 
   tasks:
-  - name: install packages
+  - name: Install Packages
     community.general.pacman:
-     name: zsh 
+     name: 
+      - ansible
+      - fzf
+      - less
+      - otf-firamono-nerd
+      # - PulseAudio Later
+      - stow
+      - tree
+      # - yay Later
+      - zoxide
+      - zsh
+      # - zen Later
