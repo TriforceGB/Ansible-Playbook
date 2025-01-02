@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  become: true
+  become: false
 
   tasks:
   - name: Install Packages
@@ -24,6 +24,7 @@
       dest: "~/dotfiles"
       clone: yes
       update: yes
+      become: false
   
   # - name: test directory
   #   file:
