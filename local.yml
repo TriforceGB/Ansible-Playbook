@@ -24,3 +24,8 @@
       dest: "~/dotfiles"
       clone: yes
       update: yes
+  
+  - name: test directory
+    file:
+      path: "~/"
+      state: directory
