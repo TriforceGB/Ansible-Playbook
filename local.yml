@@ -4,7 +4,7 @@
 
   tasks:
   - name: Install Packages
-    community.general.pacman:
+    pacman:
      name: 
       - ansible
       - fzf
@@ -19,6 +19,6 @@
       # - zen Later
 
   - name: Clone a dotfiles repo
-    ansible.builtin.git:
+    git:
       repo: https://github.com/TriforceGB/dotfiles.git
-      dest: ~/
+      dest: ~/dotfiles
