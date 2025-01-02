@@ -17,3 +17,8 @@
       - zoxide
       - zsh
       # - zen Later
+
+  - name: Clone a dotfiles repo
+    ansible.builtin.git:
+      repo: https://github.com/TriforceGB/dotfiles.git
+      dest: ~/
