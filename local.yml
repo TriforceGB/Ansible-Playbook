@@ -21,6 +21,7 @@
   - name: Clone a dotfiles repo
     git:
       repo: https://github.com/TriforceGB/dotfiles.git
-      dest: ~/dotfiles
+      dest: "{{ ansible_user_dir }}/repo"
+
       clone: yes
       update: yes
