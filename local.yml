@@ -21,6 +21,6 @@
   - name: Clone a dotfiles repo
     git:
       repo: https://github.com/TriforceGB/dotfiles.git
-      dest: /home/Zach/dotfiles
+      dest: ~/dotfiles
       clone: yes
       update: yes
