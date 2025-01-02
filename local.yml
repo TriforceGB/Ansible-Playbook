@@ -28,7 +28,11 @@
   - name: test directory
     file:
       path: "~/test"
+      state: directory
+      mode: 0755
 
   - name: test directory2
     file:
       path: "/home/server/test2"
+      state: directory
+      mode: 0755
