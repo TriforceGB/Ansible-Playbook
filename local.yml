@@ -29,9 +29,9 @@
       clone: yes
       update: yes
       
-  - name: Running GNU Stow 
-    become: false #Has to be non Sudo so that we can user the right home folder
-    ansible.builtin.command: stow ~/dotfiles
+  # - name: Running GNU Stow 
+  #   become: false #Has to be non Sudo so that we can user the right home folder
+  #   ansible.builtin.command: stow ~/dotfiles
 
   - name: change user shell to zsh 
     become: true
