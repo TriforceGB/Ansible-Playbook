@@ -19,38 +19,5 @@
 
 
   tasks:
-    - name: Install Packages
-      become: true
-      pacman:
-        name: 
-          - ansible
-          - fzf
-          - less
-          - otf-firamono-nerd
-          # - PulseAudio Later
-          - stow
-          - tree
-          # - yay Later
-          - zoxide
-          - zsh
-          # - zen Later
-
-    - name: Clone a dotfiles repo
-      become: false #Has to be non Sudo so that we can user the right home folder
-      git:
-        repo: https://github.com/TriforceGB/dotfiles.git
-        dest: "~/dotfiles"
-        clone: yes
-        update: yes
-        
-    - name: Run stow to manage dotfiles
-      become: false #Has to be non Sudo so that we can user the right home folder
-      ansible.builtin.shell: 
-        cmd: 'stow .'
-        chdir: '~/dotfiles'  # Replace with your stow directory
-
-    - name: change user shell to zsh 
-      become: true
-      user: 
-        name: "{{ the_user }}"
-        shell: /bin/zsh
+    - include: playbooks/pacman.yml
+    - include: playbooks/dotfiles.yml
