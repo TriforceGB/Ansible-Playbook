@@ -45,7 +45,7 @@
         
     - name: Run stow to manage dotfiles
       become: false #Has to be non Sudo so that we can user the right home folder
-      ansible.builtin.shell:
+      ansible.builtin.shell: 
         cmd: 'stow .'
         chdir: '~/dotfiles'  # Replace with your stow directory
 
