@@ -16,9 +16,6 @@
         path: ~/.config
         state: directory
         mode: '0755'
-    - name: print user id
-      ansible.builtin.debug:
-        msg: '{{ ansible_user_id }}'
 
 
   tasks:
@@ -54,12 +51,6 @@
 
     - name: change user shell to zsh 
       become: true
-      user:
+      user: 
         name: "{{ the_user }}"
         shell: /bin/zsh
-    
-    # - name: test directory
-    #   file:
-    #     path: "~/test"
-    #     state: directory
-    #     mode: 0755
