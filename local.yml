@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  become: false
+  become: false 
 
   tasks:
   - name: Install Packages
@@ -20,10 +20,10 @@
       # - zen Later
 
   - name: Clone a dotfiles repo
-    become: false
+    become: false #Has to be non Sudo so that we can user the right home folder
     git:
       repo: https://github.com/TriforceGB/dotfiles.git
-      dest: "{{ ansible_env.HOME }}/dotfiles"
+      dest: "~/dotfiles"
       clone: yes
       update: yes
   
