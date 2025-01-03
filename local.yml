@@ -19,5 +19,5 @@
 
 
   tasks:
-    - include: playbooks/pacman.yml
-    - include: playbooks/dotfiles.yml
+    - import_tasks: playbooks/pacman.yml
+    - import_tasks: playbooks/dotfiles.yml
