@@ -19,6 +19,7 @@
       # - zen Later
 
   - name: Clone a dotfiles repo
+    become: false
     git:
       repo: https://github.com/TriforceGB/dotfiles.git
       dest: "{{ ansible_env.HOME }}/dotfiles"
