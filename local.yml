@@ -1,9 +1,10 @@
 - hosts: localhost
   connection: local
-  become: true
+  become: false
 
   tasks:
   - name: Install Packages
+    become: true
     pacman:
      name: 
       - ansible
