@@ -24,7 +24,6 @@
       dest: "{{ ansible_env.HOME }}/dotfiles"
       clone: yes
       update: yes
-      become: false
   
   # - name: test directory
   #   file:
