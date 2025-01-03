@@ -1,6 +1,8 @@
 - hosts: localhost
   connection: local
   become: false 
+  vars:
+    the_user: "{{ ansible_user_id }}"
 
   tasks:
   - name: Install Packages
@@ -26,6 +28,16 @@
       dest: "~/dotfiles"
       clone: yes
       update: yes
+      
+  - name: Running GNU Stow 
+    become: false #Has to be non Sudo so that we can user the right home folder
+    ansible.builtin.command: stow ~/dotfiles
+
+  - name: change user shell to zsh 
+    become: true
+    user:
+      name: "{{ the_user }}"
+      shell: /bin/zsh
   
   # - name: test directory
   #   file:
