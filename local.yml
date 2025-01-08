@@ -23,7 +23,7 @@
 
     - name: DEBUG
       ansible.builtin.debug:
-        msg: { { host_user } }
+        msg: "{{ host_user }}"
   tasks:
     - import_tasks: playbooks/packages.yml
     - import_tasks: playbooks/dotfiles.yml
