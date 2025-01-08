@@ -16,15 +16,14 @@
       - zsh
       # - zen Later
 - name: Clone the yay-bin repo
-  become: false #Has to be non Sudo so that we can user the right home folder
+  become: false
   git:
     repo: https://aur.archlinux.org/yay-bin.git
     dest: "~/yay-bin"
     clone: yes
     update: yes
-
-- name: Installing yay
-  become: false #Has to be non Sudo so that we can user the right home folder
-  shell:
-    cmd: "makepkg -si"
-    chdir: "~/yay-bin" # Replace with your stow directory
+# - name: Installing yay
+#   become: false
+#   shell:
+#     cmd: "makepkg -si"
+#     chdir: "~/yay-bin"
