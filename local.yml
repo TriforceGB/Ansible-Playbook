@@ -23,10 +23,6 @@
 
     - name: DEBUG
       ansible.builtin.debug:
-        msg: "wsl_host_user: {{ wsl_host_user }}"
-
-    - name: DEBUG
-      ansible.builtin.debug:
         msg: host_user
   tasks:
     - import_tasks: playbooks/packages.yml
