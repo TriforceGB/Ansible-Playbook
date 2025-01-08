@@ -17,24 +17,17 @@
         state: directory
         mode: "0755"
 
-    - name: Detect Windows Current User
-      ansible.builtin.shell:
-        cmd: $env:UserName
-      register: windows_user
-      changed_when: false
-      failed_when: windows_user.rc != 0
-      args:
-        executable: powershell.exe
-
-    - name: Register Windows Current User
+    - name: Register Current User
       ansible.builtin.set_fact:
-        wsl_host_user: "{{ windows_user.stdout }}"
-      when: host_user is not defined
+        host_user: "{{ ansible_env['USER']}}"
 
     - name: DEBUG
       ansible.builtin.debug:
         msg: "wsl_host_user: {{ wsl_host_user }}"
 
+    - name: DEBUG
+      ansible.builtin.debug:
+        msg: host_user
   tasks:
     - import_tasks: playbooks/packages.yml
     - import_tasks: playbooks/dotfiles.yml
