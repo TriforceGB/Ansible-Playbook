@@ -1,23 +1,22 @@
 - hosts: localhost
   connection: local
-  become: false 
+  become: false
   vars:
     the_user: "{{ ansible_user_id }}"
 
   pre_tasks:
     - name: update repository
       become: true
-      pacman: 
+      pacman:
         update_cache: true
         upgrade: true
-        
+
     - name: create .config if not already present
       ansible.builtin.file:
         path: ~/.config
         state: directory
-        mode: '0755'
-
+        mode: "0755"
 
   tasks:
-    - import_tasks: playbooks/pacman.yml
+    - import_tasks: playbooks/packages.yml
     - import_tasks: playbooks/dotfiles.yml

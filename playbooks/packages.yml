@@ -1,0 +1,30 @@
+- name: Install pacman Packages
+  become: true
+  pacman:
+    name:
+      - ansible
+      - base-devel
+      - fzf
+      - git
+      - less
+      - otf-firamono-nerd
+      # - PulseAudio Later
+      - stow
+      - tree
+      # - yay Later
+      - zoxide
+      - zsh
+      # - zen Later
+- name: Clone the yay-bin repo
+  become: false #Has to be non Sudo so that we can user the right home folder
+  git:
+    repo: https://aur.archlinux.org/yay-bin.git
+    dest: "~/yay-bin"
+    clone: yes
+    update: yes
+
+- name: Installing yay
+  become: false #Has to be non Sudo so that we can user the right home folder
+  shell:
+    cmd: "makepkg -si"
+    chdir: "~/yay-bin" # Replace with your stow directory
