@@ -1,17 +1,6 @@
-- name: Pre-Run | Gather Username
+- name: Pre-Tasks | Register User Information
   tags: always
-  setup:
-    gather_subset:
-      - !all
-      - !min
-      - user
-  register: username
-
-- name: Pre-Run | Gather User Dir
-  tags: always
-  setup:
-    gather_subset:
-      - !all
-      - !min
-      - user_dir
-  register: user_dir
+  set_fact:
+    username: "{{ ansible_env.USER }}"
+    user_dir: "{{ ansible_env.HOME }}"
+    distribution: "{{ ansible_distribution }}"
