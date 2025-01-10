@@ -1,5 +1,4 @@
 - name: User DIr
   ansible.builtin.setup:
     gather_subset:
-      - all
-    register: user_info
+  register: user_info
