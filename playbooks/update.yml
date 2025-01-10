@@ -1,5 +1,5 @@
 - name: Pre-Run | Update Package | Arch
-  tags: always
+  tags: Arch,Update,Package
   become: true
   pacman:
     update_cache: true

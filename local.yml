@@ -5,15 +5,15 @@
     - import_tasks: playbooks/whoami.yml
     - import_tasks: playbooks/update.yml
     - name: Pre-Tasks | DEBUG NAME
-      tags: always
+      tags: debug
       debug:
         msg: "{{ username }}"
     - name: Pre-Tasks | DEBUG DIR
-      tags: always
+      tags: debug
       debug:
         msg: "{{ user_dir}}"
     - name: Pre-Tasks | DEBUG OS
-      tags: always
+      tags: debug
       debug:
         msg: "{{ distribution }}"
 
@@ -29,7 +29,6 @@
 - hosts: localhost
   tags: always
   become: false
-  when: Role == "3"
   roles:
     - base
 
