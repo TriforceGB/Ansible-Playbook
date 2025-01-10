@@ -1,10 +1,6 @@
 - hosts: localhost
   tags: always
   become: false
-  vars_prompt:
-    - name: var_role
-      private: no
-      prompt: |
 
   pre_tasks:
     - import_tasks: playbooks/whoami.yml

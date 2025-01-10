@@ -1,6 +1,5 @@
 #!/bin/bash
-
-
+#bash -e "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Anisble_Setup/main/Scripts/Pre-Ansible.sh)"
 # && "$ID" != "ubuntu"  add Later
 # Check if your Using a Supported OS
 source /etc/os-release
@@ -16,9 +15,3 @@ echo -e "What Setup Do You Want?
 read Setup
 
 ansible-pull -U https://github.com/TriforceGB/Anisble_Setup.git -Ke "Setup=$Setup"
-#bash -e "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Anisble_Setup/main/Scripts/Pre-Ansible.sh)"
-
-
-
-
-
