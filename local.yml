@@ -1,33 +1,42 @@
 - hosts: localhost
-  connection: local
-  vars:
-    the_user: "{{ ansible_user_id }}"
-
+  tags: always
+  become: false
   pre_tasks:
-    - name: update repository
-      become: true
-      pacman:
-        update_cache: true
-        upgrade: true
-
-    - name: create .config if not already present
-      ansible.builtin.file:
-        path: ~/.config
-        state: directory
-        mode: "0755"
-
-    - name: Register Current User
-      ansible.builtin.set_fact:
-        host_user: "{{ ansible_env['USER']}}"
-
-    - name: DEBUG
-      ansible.builtin.debug:
-        msg: "{{ host_user }}"
-
     - import_tasks: playbooks/whoami.yml
-    - name: DEBUG
-      ansible.builtin.debug:
-        msg: "{{ user_info }}"
+    - name: Pre-Tasks | DEBUG NAME
+      tags: always
+      debug:
+        msg: "{{ username }}"
+    - name: Pre-Tasks | DEBUG DIR
+      tags: always
+      debug:
+        msg: "{{ user_dir }}"
   tasks:
-    - import_tasks: playbooks/packages.yml
-    - import_tasks: playbooks/dotfiles.yml
+
+    # - name: update repository
+    #   become: true
+    #   pacman:
+    #     update_cache: true
+    #     upgrade: true
+
+    # - name: create .config if not already present
+    #   ansible.builtin.file:
+    #     path: ~/.config
+    #     state: directory
+    #     mode: "0755"
+
+    # - name: Register Current User
+    #   ansible.builtin.set_fact:
+    #     host_user: "{{ ansible_env['USER']}}"
+
+    # - name: DEBUG
+    #   ansible.builtin.debug:
+    #     msg: "{{ host_user }}"
+
+    # - import_tasks: playbooks/whoami.yml
+    # - name: DEBUG
+    #   ansible.builtin.debug:
+    #     msg: "{{ user_info }}"
+
+    #     - import_tasks: playbooks/packages.yml
+    # - import_tasks: playbooks/dotfiles.yml

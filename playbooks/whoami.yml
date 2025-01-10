@@ -1,5 +1,13 @@
-- name: User DIr
-  ansible.builtin.setup:
+- name: Pre-Run | Gather Username
+  tags: always
+  setup:
     gather_subset:
-      - all
-  register: user_info
+      - user
+  register: username
+
+- name: Pre-Run | Gather User Dir
+  tags: always
+  setup:
+    gather_subset:
+      - user_dir
+  register: user_dir
