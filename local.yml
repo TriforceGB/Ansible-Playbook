@@ -3,10 +3,12 @@
   become: false
   vars_prompt:
     - name: var_role
-      prompt: "What Setup Do You Want?
-        (1) Workstation
-        (2) Server
-        (3) Base Install"
+      prompt: test
+      # |
+      #   What Setup Do You Want?
+      #   (1) Workstation
+      #   (2) Server
+      #   (3) Base Install
       private: false
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
