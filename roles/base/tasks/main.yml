@@ -1,0 +1,12 @@
+- name: Pre-Tasks | DEBUG NAME
+  tags: always
+  debug:
+    msg: "{{ username }}"
+- name: Pre-Tasks | DEBUG DIR
+  tags: always
+  debug:
+    msg: "{{ user_dir}}"
+- name: Pre-Tasks | DEBUG OS
+  tags: always
+  debug:
+    msg: "{{ distribution }}"

@@ -3,6 +3,7 @@
   become: false
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
+    - import_tasks: playbooks/update.yml
     - name: Pre-Tasks | DEBUG NAME
       tags: always
       debug:
@@ -15,7 +16,22 @@
       tags: always
       debug:
         msg: "{{ distribution }}"
-  tasks:
+
+  vars_prompt:
+    - name: Role
+      prompt: |
+        What Setup Do You Want? 
+        (1) Workstation 
+        (2) Server
+        (3) Base Install
+      private: false
+
+- hosts: localhost
+  tags: always
+  become: false
+  when: Role == "3"
+  roles:
+    - base
 
     # - name: update repository
     #   become: true

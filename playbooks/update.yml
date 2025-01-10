@@ -4,4 +4,4 @@
   pacman:
     update_cache: true
     upgrade: true
-  when: ansible_distribution == "Archlinux"
+  when: distribution == "Archlinux"
