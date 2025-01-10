@@ -2,6 +2,8 @@
   tags: always
   setup:
     gather_subset:
+      - !all
+      - !min
       - user
   register: username
 
@@ -9,5 +11,7 @@
   tags: always
   setup:
     gather_subset:
+      - !all
+      - !min
       - user_dir
   register: user_dir

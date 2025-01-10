@@ -1,4 +1,4 @@
-- name: pre-run | update package | Arch
+- name: Pre-Run | Update Package | Arch
   tags: always
   become: true
   pacman:
