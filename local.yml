@@ -23,9 +23,6 @@
     - name: DEBUG
       ansible.builtin.debug:
         msg: "{{ host_user }}"
-    - name: DEBUG
-      ansible.builtin.debug:
-        msg: "{{ user }}"
     - name: User Dir
       ansible.builtin.debug:
         msg: "{{ user_dir }}"
