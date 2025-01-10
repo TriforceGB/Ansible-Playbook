@@ -2,7 +2,7 @@
   tags: always
   become: false
   pre_tasks:
-    - import_tasks: playbooks/whoami.yml
+    # - import_tasks: playbooks/whoami.yml
     - name: Pre-Tasks | DEBUG NAME
       tags: always
       debug:
