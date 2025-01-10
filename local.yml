@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: localhost
   connection: local
   vars:
     the_user: "{{ ansible_user_id }}"
