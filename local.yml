@@ -23,9 +23,11 @@
     - name: DEBUG
       ansible.builtin.debug:
         msg: "{{ host_user }}"
-    - name: User Dir
+
+    - import_tasks: playbooks/whoami.yml
+    - name: DEBUG
       ansible.builtin.debug:
-        msg: "{{ user_dir }}"
+        msg: "{{ user_info }}"
   tasks:
     - import_tasks: playbooks/packages.yml
     - import_tasks: playbooks/dotfiles.yml
