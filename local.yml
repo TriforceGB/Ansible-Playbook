@@ -3,13 +3,14 @@
   become: false
   vars_prompt:
     - name: var_role
+      private: no
       prompt: test
       # |
       #   What Setup Do You Want?
       #   (1) Workstation
       #   (2) Server
       #   (3) Base Install
-      private: false
+
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
     - import_tasks: playbooks/update.yml
