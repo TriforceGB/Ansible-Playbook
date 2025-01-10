@@ -1,0 +1,8 @@
+- name: workstation | Announcement
+  tags: always
+  debug:
+    msg: WE are Base
+- name: workstation | DEBUG NAME
+  tags: always
+  debug:
+    msg: "{{ username }}"

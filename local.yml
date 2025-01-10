@@ -5,6 +5,7 @@
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
     - import_tasks: playbooks/update.yml
+
     - name: Pre-Tasks | DEBUG SETUP TEST
       tags: debug
       debug:
@@ -21,9 +22,17 @@
       tags: debug
       debug:
         msg: "{{ distribution }}"
-  # roles:
-  #   - role: base
-  #     when: Role == 3
+  roles:
+    - role: base
+      tags: base
+
+    - role: workstation
+      tags: workstation
+      when: Setup == 1
+
+    - role: server
+      tags: server
+      when: Setup == 2
 
   # - name: update repository
   #   become: true
