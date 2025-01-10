@@ -1,15 +1,6 @@
 - hosts: localhost
   tags: always
   become: false
-  vars_prompt:
-    - name: var_role
-      private: no
-      prompt: "test"
-      # |
-      #   What Setup Do You Want?
-      #   (1) Workstation
-      #   (2) Server
-      #   (3) Base Install
 
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
@@ -26,6 +17,17 @@
       tags: debug
       debug:
         msg: "{{ distribution }}"
+
+  vars_prompt:
+    - name: var_role
+      private: no
+      prompt: "test"
+      # |
+      #   What Setup Do You Want?
+      #   (1) Workstation
+      #   (2) Server
+      #   (3) Base Install
+
   roles:
     - role: base
       when: Role == 3
