@@ -1,15 +1,14 @@
 - hosts: localhost
   tags: always
   become: false
-  # vars_prompt:
-  #   - name: var_role
-  #     private: no
-  #     prompt: "test"
-  #     # |
-  #     #   What Setup Do You Want?
-  #     #   (1) Workstation
-  #     #   (2) Server
-  #     #   (3) Base Install
+  vars_prompt:
+    - name: var_role
+      private: no
+      prompt: |
+        What Setup Do You Want?
+        (1) Workstation
+        (2) Server
+        (3) Base Install
 
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
