@@ -3,25 +3,27 @@
   become: false
 
   pre_tasks:
-    - import_tasks: playbooks/whoami.yml
-    - import_tasks: playbooks/update.yml
+    - name: Pre-Tasks
+      block:
+        - import_tasks: playbooks/whoami.yml
+        - import_tasks: playbooks/update.yml
 
-    - name: Pre-Tasks | DEBUG SETUP TEST
-      tags: debug
-      debug:
-        msg: "{{ Setup }}"
-    - name: Pre-Tasks | DEBUG NAME
-      tags: debug
-      debug:
-        msg: "{{ username }}"
-    - name: Pre-Tasks | DEBUG DIR
-      tags: debug
-      debug:
-        msg: "{{ user_dir}}"
-    - name: Pre-Tasks | DEBUG OS
-      tags: debug
-      debug:
-        msg: "{{ distribution }}"
+        - name: Pre-Tasks | DEBUG SETUP TEST
+          tags: debug
+          debug:
+            msg: "{{ Setup }}"
+        - name: Pre-Tasks | DEBUG NAME
+          tags: debug
+          debug:
+            msg: "{{ username }}"
+        - name: Pre-Tasks | DEBUG DIR
+          tags: debug
+          debug:
+            msg: "{{ user_dir}}"
+        - name: Pre-Tasks | DEBUG OS
+          tags: debug
+          debug:
+            msg: "{{ distribution }}"
   roles:
     - role: base
       tags: base
@@ -34,12 +36,6 @@
       tags: server
       when: Setup == "2"
 
-  # - name: update repository
-  #   become: true
-  #   pacman:
-  #     update_cache: true
-  #     upgrade: true
-
   # - name: create .config if not already present
   #   ansible.builtin.file:
   #     path: ~/.config
@@ -49,15 +45,3 @@
   # - name: Register Current User
   #   ansible.builtin.set_fact:
   #     host_user: "{{ ansible_env['USER']}}"
-
-  # - name: DEBUG
-  #   ansible.builtin.debug:
-  #     msg: "{{ host_user }}"
-
-  # - import_tasks: playbooks/whoami.yml
-  # - name: DEBUG
-  #   ansible.builtin.debug:
-  #     msg: "{{ user_info }}"
-
-  #     - import_tasks: playbooks/packages.yml
-  # - import_tasks: playbooks/dotfiles.yml
