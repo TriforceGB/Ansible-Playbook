@@ -1,6 +1,5 @@
-- hosts: localhost
+- hosts: all
   connection: local
-  become: false
   vars:
     the_user: "{{ ansible_user_id }}"
 
@@ -24,6 +23,12 @@
     - name: DEBUG
       ansible.builtin.debug:
         msg: "{{ host_user }}"
+    - name: DEBUG
+      ansible.builtin.debug:
+        msg: "{{ user }}"
+    - name: User Dir
+      ansible.builtin.debug:
+        msg: "{{ user_dir }}"
   tasks:
     - import_tasks: playbooks/packages.yml
     - import_tasks: playbooks/dotfiles.yml
