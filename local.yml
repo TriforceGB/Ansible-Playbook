@@ -2,12 +2,11 @@
   tags: always
   become: false
   vars_prompt:
-    - name: Role
-      prompt: |
-        What Setup Do You Want? 
-        (1) Workstation 
+    - name: var_role
+      prompt: "What Setup Do You Want?
+        (1) Workstation
         (2) Server
-        (3) Base Install
+        (3) Base Install"
       private: false
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
@@ -25,7 +24,8 @@
       debug:
         msg: "{{ distribution }}"
   roles:
-    - base
+    - role: base
+      when: Role == 3
 
     # - name: update repository
     #   become: true
