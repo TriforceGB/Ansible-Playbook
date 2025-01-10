@@ -28,11 +28,11 @@
 
     - role: workstation
       tags: workstation
-      when: Setup == 1
+      when: Setup == "1"
 
     - role: server
       tags: server
-      when: Setup == 2
+      when: Setup == "2"
 
   # - name: update repository
   #   become: true
