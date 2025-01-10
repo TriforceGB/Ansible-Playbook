@@ -6,11 +6,11 @@
     - name: Pre-Tasks | DEBUG NAME
       tags: always
       debug:
-        msg: "{{ username }}"
+        msg: "{{ ansible_env.USER }}"
     - name: Pre-Tasks | DEBUG DIR
       tags: always
       debug:
-        msg: "{{ user_dir }}"
+        msg: "{{ ansible_env.HOME }}"
   tasks:
 
     # - name: update repository
