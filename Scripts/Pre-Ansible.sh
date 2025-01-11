@@ -6,7 +6,7 @@
 source /etc/os-release
 
 if [ "$ID" == "arch" ]; then
-    if !pacman -Q ansible &> /dev/null; then
+    if ! which ansible > /dev/null 2>&1; then
         sudo pacman -S ansible --noconfirm
     fi
 elif [ "$ID" == "ubuntu" ]; then
