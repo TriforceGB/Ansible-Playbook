@@ -7,4 +7,5 @@
 - name: Base | Stow | zsh dotfiles
   become: false
   shell:
-    cmd: "stow -d ~/.dotfiles/zsh -t ~/"
+    cmd: "stow zsh"
+    chdir: "{user_dir}/.dotfiles/"
