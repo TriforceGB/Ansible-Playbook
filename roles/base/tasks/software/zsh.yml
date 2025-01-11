@@ -8,4 +8,4 @@
   become: false
   shell:
     cmd: "stow zsh"
-    chdir: "{user_dir}/.dotfiles/"
+    chdir: "{{ user_dir }}/.dotfiles/"
