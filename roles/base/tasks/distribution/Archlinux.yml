@@ -23,7 +23,7 @@
         dest: "/tmp/yay"
         clone: yes
     - name:  Base | Arch | Install yay
-      become: true
+      become: false
       command: makepkg -si --noconfirm
       args:
         chdir: "/tmp/yay"
