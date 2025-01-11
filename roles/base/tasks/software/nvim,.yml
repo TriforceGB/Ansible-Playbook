@@ -1,0 +1,13 @@
+- name: Base | nvim | pacman Install
+  become: true
+  pacman:
+    name: 
+      - vim
+      - nvim
+  when: distribution == "Archlinux"
+
+- name: Base | fastfetch | Stow dotfiles
+  become: false
+  shell:
+    cmd: "stow nvim"
+    chdir: "{{ user_dir }}/.dotfiles/"

@@ -1,0 +1,12 @@
+- name: Base | fastfetch | pacman Install
+  become: true
+  pacman:
+    name: 
+      - fastfetch
+  when: distribution == "Archlinux"
+
+- name: Base | fastfetch | Stow dotfiles
+  become: false
+  shell:
+    cmd: "stow fastfetch"
+    chdir: "{{ user_dir }}/.dotfiles/"

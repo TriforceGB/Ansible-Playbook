@@ -8,7 +8,8 @@
 # software
 - import_tasks: software/zsh.yml
 # tmux
-# nvim
+- import_tasks: software/nvim.yml
+- import_tasks: software/fastfetch.yml
 # fastfetch
 # htop
 # fonts
