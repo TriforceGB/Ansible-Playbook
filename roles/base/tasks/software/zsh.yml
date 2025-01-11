@@ -1,6 +1,6 @@
 - name: Base | Arch | Install zsh & Dependencies
   become: true
-  community.general.pacman:
+  pacman:
     name: 
       - zsh
       - zoxide
