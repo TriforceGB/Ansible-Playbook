@@ -1,6 +1,0 @@
-
-# - name: Installing yay
-#   become: false
-#   shell:
-#     cmd: "makepkg -si"
-#     chdir: "~/yay-bin"

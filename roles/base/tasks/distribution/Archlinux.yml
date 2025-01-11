@@ -1,3 +1,10 @@
+- name: Base | Arch | Update pacman.conf
+  tags: Arch,pacman
+  become: true
+  copy:
+    src: files/pacman.conf
+    dest: "{{ user_dir }}/pacman.conf"
+
 - name: Base | Arch | Update Package 
   tags: Arch,Update,Package
   become: true
@@ -34,4 +41,4 @@
         path: "/tmp/yay"
         state: absent
 
-        
+# edit /etc/arch.conf

@@ -6,3 +6,19 @@
   tags: always
   debug:
     msg: "{{ username }}"
+# terminal elmulator
+# file manager
+# discord
+# obsidian
+
+#Things alrady installed via Arch install
+# Dolphin
+# dunst
+# distribution/Archlinux.yml#hyprland
+# kitty
+# polkit-kde-agent
+# qt5-wayland
+# qt6-wayland
+# slurp
+# wofi
+# xd-desktop-portal-hyprland
