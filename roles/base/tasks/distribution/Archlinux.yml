@@ -12,17 +12,6 @@
     update_cache: true
     upgrade: true
 
-- name: Base | Arch | Needed Package 
-  tags: arch,package,needed
-  become: true
-  pacman:
-      name:
-        - ansible
-        - base-devel
-        - git
-        - stow
-      state: latest
-
 - block:
     - name: Base | Arch | Clone yay repo
       become: false
