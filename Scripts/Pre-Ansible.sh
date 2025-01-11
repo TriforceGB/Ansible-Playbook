@@ -4,6 +4,7 @@
 
 # Check if your Using a Supported OS
 source /etc/os-release
+echo $ID
 if [ "$ID" == "arch" ]; then
     sudo pacman -S ansible
 elif [ "$ID" == "ubuntu" ]; then
