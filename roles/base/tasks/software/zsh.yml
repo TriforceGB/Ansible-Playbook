@@ -1,4 +1,4 @@
-- name: Base | Arch | Install zsh & Dependencies
+- name: Base | zsh | Pacman zsh & Dependencies
   become: true
   pacman:
     name: 
@@ -8,8 +8,14 @@
       - fzf
   when: distribution == "Archlinux"
 
-- name: Base | Stow | zsh dotfiles
+- name: Base | zsh | Stow dotfiles
   become: false
   shell:
     cmd: "stow zsh"
     chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Base | zsh | Change Default Shell
+  become: true
+  user: 
+    name: "{{ username }}"
+    shell: /bin/zsh

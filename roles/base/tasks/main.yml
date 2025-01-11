@@ -1,5 +1,9 @@
+# Per Distribution files
 - import_tasks: distribution/Archlinux.yml
   when: distribution == "Archlinux"
+
+# Dotfiles Init
+- import_tasks: dotfiles.yml
 
 # software
 - import_tasks: software/zsh.yml

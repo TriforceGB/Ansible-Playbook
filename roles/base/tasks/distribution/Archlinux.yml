@@ -3,7 +3,7 @@
   become: true
   copy:
     src: files/pacman.conf
-    dest: "{{ user_dir }}/pacman.conf"
+    dest: /etc/pacman.conf"
 
 - name: Base | Arch | Update Package 
   tags: arch,update,package
@@ -41,5 +41,3 @@
       file:
         path: "/tmp/yay"
         state: absent
-
-# edit /etc/arch.conf

@@ -17,9 +17,3 @@
     - role: server
       tags: server
       when: Setup == "2"
-
-  # - name: create .config if not already present
-  #   ansible.builtin.file:
-  #     path: ~/.config
-  #     state: directory
-  #     mode: "0755"

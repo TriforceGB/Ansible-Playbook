@@ -1,0 +1,13 @@
+- name: Base | Dotfiles | Clone Dotfiles Repo
+  become: false #Has to be non Sudo so that we can user the right home folder
+  git:
+    repo: https://github.com/TriforceGB/.dotfiles.git
+    dest: "~/dotfiles"
+    clone: yes
+    update: yes
+
+- name: Base | Dotfiles | Create .config
+  file:
+    path: "{{user_dir}}/.config"
+    state: directory
+    mode: "0755"
