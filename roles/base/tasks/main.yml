@@ -1,8 +1,4 @@
-- name: Base | Announcement
-  tags: always
-  debug:
-    msg: WE are Base
-- name: Base | DEBUG NAME
-  tags: always
-  debug:
-    msg: "{{ username }}"
+- import_tasks: distribution/"{{ distribution }}".yml
+
+# software
+- import_tasks: software/zsh.yml

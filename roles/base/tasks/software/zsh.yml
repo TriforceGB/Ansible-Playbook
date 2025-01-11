@@ -1,0 +1,10 @@
+- name: Base | Arch | Install zsh
+  become: true
+  pacman:
+    name: zsh
+  when: distribution == "Archlinux"
+
+- name: Base | Stow | zsh dotfiles
+  become: false
+  shell:
+    cmd: "stow -d ~/.dotfiles/zsh -t ~/"

@@ -17,3 +17,11 @@
   user: 
     name: "{{ the_user }}"
     shell: /bin/zsh
+
+
+
+# Things to Do change 
+# stow dir -d
+# clone/update repo
+# restow?
+# stow -d ~/.dotfiles -t ~/

@@ -1,7 +1,6 @@
-- name: Pre-Run | Update Package | Arch
+- name: Base | Arch | Update Package 
   tags: Arch,Update,Package
   become: true
   pacman:
     update_cache: true
     upgrade: true
-  when: distribution == "Archlinux"
