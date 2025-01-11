@@ -23,18 +23,11 @@
         dest: "/tmp/yay"
         clone: yes
 
-    - name: Base | Arch | Build yay
+    - name:  Base | Arch | Install yay
       become: false
-      command:
-        cmd: makepkg -sf --noconfirm
+      command: 
+        cmd: makepkg -sfi --noconfirm 
         chdir: "/tmp/yay"
-
-    - name: Base | Arch | Install yay
-      become: true
-      command:
-        cmd: pacman -U --noconfirm yay-*.pkg.tar.zst
-        chdir: "/tmp/yay"
-
 
     - name: Base | Arch | Remove yay build directory
       file:
