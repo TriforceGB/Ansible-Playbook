@@ -1,4 +1,5 @@
-- import_tasks: distribution/"{{ distribution }}".yml
+- import_tasks: distribution/Archlinux.yml
+  when: distribution == "Archlinux"
 
 # software
 - import_tasks: software/zsh.yml
