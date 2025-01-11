@@ -7,7 +7,8 @@ source /etc/os-release
 echo $ID
 
 if [ "$ID" == "arch" ]; then
-    sudo pacman -S ansible --noconfirm
+    if ! pacman -Q git &> /dev/null;then
+        sudo pacman -S ansible --noconfirm
 elif [ "$ID" == "ubuntu" ]; then
     echo "You chose option 2."
 else
