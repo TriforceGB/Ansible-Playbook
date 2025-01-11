@@ -5,8 +5,9 @@
 # Check if your Using a Supported OS
 source /etc/os-release
 echo $ID
+
 if [ "$ID" == "arch" ]; then
-    sudo pacman -S ansible
+    sudo pacman -S ansible --noconfirm
 elif [ "$ID" == "ubuntu" ]; then
     echo "You chose option 2."
 else
