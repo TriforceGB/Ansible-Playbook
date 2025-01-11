@@ -24,9 +24,9 @@
         clone: yes
 
     - name:  Base | Arch | Install yay
-      become: false
+      become: true
       command: 
-        cmd: makepkg -si 
+        cmd: makepkg -sfi --noconfirm
         chdir: "/tmp/yay"
         creates: /usr/sbin/yay
 
