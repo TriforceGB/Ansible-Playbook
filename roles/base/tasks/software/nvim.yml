@@ -6,8 +6,8 @@
       - neovim
   when: distribution == "Archlinux"
 
-- name: Base | fastfetch | Stow dotfiles
-  become: false
-  shell:
-    cmd: "stow nvim"
-    chdir: "{{ user_dir }}/.dotfiles/"
+# - name: Base | nvim | Stow dotfiles
+#   become: false
+#   shell:
+#     cmd: "stow nvim"
+#     chdir: "{{ user_dir }}/.dotfiles/"

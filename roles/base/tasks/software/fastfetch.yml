@@ -5,8 +5,8 @@
       - fastfetch
   when: distribution == "Archlinux"
 
-- name: Base | fastfetch | Stow dotfiles
-  become: false
-  shell:
-    cmd: "stow fastfetch"
-    chdir: "{{ user_dir }}/.dotfiles/"
+# - name: Base | fastfetch | Stow dotfiles
+#   become: false
+#   shell:
+#     cmd: "stow fastfetch"
+#     chdir: "{{ user_dir }}/.dotfiles/"
