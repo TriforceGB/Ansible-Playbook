@@ -22,11 +22,11 @@
         repo: https://aur.archlinux.org/yay.git
         dest: "/tmp/yay"
         clone: yes
-        
+
     - name:  Base | Arch | Install yay
       become: false
       command: 
-        cmd: makepkg -si --noconfirm
+        cmd: makepkg -si 
         chdir: "/tmp/yay"
         creates: /usr/bin/yay
 
@@ -34,3 +34,5 @@
       file:
         path: "/tmp/yay"
         state: absent
+
+        
