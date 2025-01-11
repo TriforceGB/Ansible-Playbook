@@ -1,7 +1,11 @@
-- name: Base | Arch | Install zsh
+- name: Base | Arch | Install zsh & Dependencies
   become: true
   pacman:
-    name: zsh
+    name: 
+      - zsh
+      - zoxide
+      - otf-firamono-nerd
+      - fzf
   when: distribution == "Archlinux"
 
 - name: Base | Stow | zsh dotfiles

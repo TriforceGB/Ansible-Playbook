@@ -4,3 +4,30 @@
   pacman:
     update_cache: true
     upgrade: true
+
+- name: Base | Arch | Needed Package 
+  become: true
+  pacman:
+      name:
+        - ansible
+        - base-devel
+        - git
+        - stow
+      state: latest
+
+- block:
+    - name: Base | Arch | Clone yay repo
+      become: false
+      git:
+        repo: https://aur.archlinux.org/yay.git
+        dest: "/tmp/yay"
+        clone: yes
+    - name:  Base | Arch | Install yay
+      become: true
+      command: makepkg -si --noconfirm
+      args:
+        chdir: "/tmp/yay"
+    - name: Base | Arch | Remove yay build directory
+      file:
+        path: "/tmp/yay"
+        state: absent

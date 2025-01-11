@@ -7,6 +7,20 @@ if [[ "$ID" != "arch" ]]; then
     echo "Unfortunately Your OS is not supported with this Ansiable Playbook"
     exit 1
 fi
+if [[ "$ID" == "arch" ]]; then
+    echo "Unfortunately Your OS is not supported with this Ansiable Playbook"
+    exit 1
+fi
+
+if [ "$ID" == "arch" ]; then
+    sudo pacman -S ansible
+elif [ "$ID" == "ubuntu" ]; then
+    echo "You chose option 2."
+else
+    echo "Unfortunately Your OS is not supported with this Ansiable Playbook"
+    exit 1
+fi
+
 # Prompt the user to enter wanted Setup
 echo -e "What Setup Do You Want?
         (1) Workstation
