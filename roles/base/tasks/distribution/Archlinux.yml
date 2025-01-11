@@ -28,7 +28,7 @@
       command: 
         cmd: makepkg -si 
         chdir: "/tmp/yay"
-        creates: /usr/bin/yay
+        creates: /usr/sbin/yay
 
     - name: Base | Arch | Remove yay build directory
       file:
