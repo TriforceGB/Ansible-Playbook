@@ -4,7 +4,6 @@
 
 # Check if your Using a Supported OS
 source /etc/os-release
-echo $ID
 
 if [ "$ID" == "arch" ]; then
     if ! pacman -Q git &> /dev/null;then
