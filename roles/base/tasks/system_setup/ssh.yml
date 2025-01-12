@@ -15,7 +15,7 @@
   become: false
   tags: ssh
   ansible.posix.authorized_key:
-    user: {{ username }}
+    user: "{{ username }}"
     state: present
     key: '{{ item }}'
   with_file:
