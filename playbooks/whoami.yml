@@ -4,3 +4,4 @@
     username: "{{ ansible_env.USER }}"
     user_dir: "{{ ansible_env.HOME }}"
     distribution: "{{ ansible_distribution }}"
+    hostname: "{{ ansible_hostname }}"

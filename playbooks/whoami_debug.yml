@@ -17,3 +17,8 @@
   tags: debug
   debug:
     msg: "{{ distribution }}"
+
+- name: Pre-Tasks | DEBUG Hostname
+  tags: debug
+  debug:
+    msg: "{{ hostname }}"
