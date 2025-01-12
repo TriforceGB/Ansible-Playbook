@@ -10,6 +10,7 @@
   tags: ssh
   community.crypto.openssh_keypair:
     path: "{{user_dir}}/.ssh/id_ssh_rsa"
+    comment: "{{ user }}@{{ hostname }}"
 
 - name: SSH | Copy Public Key
   become: false
