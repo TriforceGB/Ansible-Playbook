@@ -1,7 +1,7 @@
-- name: Base | SSH | Create .shh
+- name: Base | SSH | Create .ssh
   tags: ssh
   file:
-    path: "{{user_dir}}/.shh"
+    path: "{{user_dir}}/.ssh"
     state: directory
     mode: "0700"
 
