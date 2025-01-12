@@ -6,7 +6,7 @@
 source /etc/os-release
 
 if [ "$ID" == "arch" ]; then
-    sudo pacman -S ansible --noconfirm
+    pacman -S ansible --noconfirm
 elif [ "$ID" == "ubuntu" ]; then
     echo "You chose option 2."
 else
