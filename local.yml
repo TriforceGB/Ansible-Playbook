@@ -4,7 +4,8 @@
 
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
-    - import_tasks: playbooks/whoami_debug.yml
+    # - import_tasks: playbooks/whoami_debug.yml
+    - import_tasks: playbooks/dependencies.yml
 
   roles:
     - role: base
