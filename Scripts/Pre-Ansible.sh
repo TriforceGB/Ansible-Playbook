@@ -6,10 +6,10 @@
 source /etc/os-release
 
 if [ "$ID" == "arch" ]; then
-    if !pacman -Q ansible; then
+    if ! pacman -Q ansible; then
     sudo pacman -S ansible --noconfirm
     fi
-    if !pacman -Q git; then
+    if ! pacman -Q git; then
     sudo pacman -S git --noconfirm
     fi
 elif [ "$ID" == "ubuntu" ]; then
