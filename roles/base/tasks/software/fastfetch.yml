@@ -1,4 +1,4 @@
-- name: Base | fastfetch | pacman Install
+- name: Fastfetch | pacman Install
   become: true
   pacman:
     name: 

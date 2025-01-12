@@ -1,4 +1,4 @@
-- name: Base | Dotfiles | Clone Dotfiles Repo
+- name: Dotfiles | Clone Dotfiles Repo
   become: false #Has to be non Sudo so that we can user the right home folder
   tags: git,dotfiles
   git:
@@ -7,7 +7,7 @@
     clone: yes
     update: yes
 
-- name: Base | Dotfiles | Create .config
+- name: Dotfiles | Create .config
   file:
     path: "{{user_dir}}/.config"
     state: directory

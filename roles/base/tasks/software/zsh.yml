@@ -1,4 +1,4 @@
-- name: Base | zsh | Pacman zsh & Dependencies
+- name: zsh | Pacman zsh & Dependencies
   become: true
   pacman:
     name: 

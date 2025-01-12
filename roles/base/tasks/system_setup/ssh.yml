@@ -1,21 +1,21 @@
-- name: Base | SSH | Create .ssh
+- name: SSH | Create .ssh
   tags: ssh
   file:
     path: "{{user_dir}}/.ssh"
     state: directory
     mode: "0700"
 
-- name:  Base | SSH | Generate Keys
+- name: SSH | Generate Keys
   become: false
   tags: ssh
   community.crypto.openssh_keypair:
     path: "{{user_dir}}/.ssh/id_ssh_rsa"
 
-- name: Base | SSH | Copy Public Key
+- name: SSH | Copy Public Key
   become: false
   tags: ssh
   ansible.posix.authorized_key:
-    user: deploy
+    user: {{ username }}
     state: present
     key: '{{ item }}'
   with_file:

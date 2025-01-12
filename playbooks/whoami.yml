@@ -1,4 +1,4 @@
-- name: Register User Information
+- name: Pre-Tasks | Register User Information
   tags: always
   set_fact:
     username: "{{ ansible_env.USER }}"

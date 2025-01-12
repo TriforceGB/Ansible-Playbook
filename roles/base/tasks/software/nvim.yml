@@ -1,4 +1,4 @@
-- name: Base | nvim | pacman Install
+- name: nvim | pacman Install
   become: true
   pacman:
     name: 
