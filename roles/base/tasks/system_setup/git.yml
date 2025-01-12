@@ -14,7 +14,7 @@
   git_config:
     name: init.defaultBranch
     value: main
-    scope: yes 
+    scope: global 
 
 - name: Git | Set Stored Credentials
   git_config:
