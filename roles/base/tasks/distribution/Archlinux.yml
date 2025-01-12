@@ -15,6 +15,7 @@
 - block:
     - name: Base | Arch | Clone yay repo
       become: false
+      tags: arch,yay
       git:
         repo: https://aur.archlinux.org/yay.git
         dest: "/tmp/yay"
@@ -22,11 +23,13 @@
 
     - name:  Base | Arch | Install yay
       become: false
+      tags: arch,yay
       command: 
         cmd: makepkg -sfi --noconfirm 
         chdir: "/tmp/yay"
 
     - name: Base | Arch | Remove yay build directory
+      tags: arch,yay,remove
       file:
         path: "/tmp/yay"
         state: absent

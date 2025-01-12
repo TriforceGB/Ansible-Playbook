@@ -1,0 +1,17 @@
+- name:  Base | SSH | Generate Keys
+  become: false
+  tags: ssh
+  community.crypto.openssh_keypair:
+    path: "{{user_dir}}/.ssh/id_ssh_rsa"
+
+- name: Base | SSH | Copy Public Key
+  become: false
+  tags: ssh
+  ansible.posix.authorized_key:
+    user: deploy
+    state: present
+    key: '{{ item }}'
+  with_file:
+    - ssh_key/zach-desktop
+    - ssh_key/zach-vivobook
+    - ssh_key/ubuntu-homeserver
