@@ -2,22 +2,22 @@
   git_config:
     name: user.name
     value: "{{ username }}" 
-    global: yes 
+    scope: global 
 
 - name: Git | Set Global Email
   git_config:
     name: user.email
     value: "Zach.Schultz.2.0.1@gmail.com" # My Email
-    global: yes 
+    scope: global 
 
 - name: Git | Set Global Default Branch
   git_config:
     name: init.defaultBranch
     value: main
-    global: yes 
+    scope: yes 
 
 - name: Git | Set Stored Credentials
   git_config:
     name: credential.helper
     value: store
-    global: yes  
+    scope: global  
