@@ -13,7 +13,8 @@ if [ "$ID" == "arch" ]; then
     sudo pacman -S git --noconfirm
     fi
 elif [ "$ID" == "ubuntu" ]; then
-    echo "You chose option 2."
+    echo "Unfortunately Your OS is not supported with this Ansiable Playbook"
+    exit 1
 else
     echo "Unfortunately Your OS is not supported with this Ansiable Playbook"
     exit 1
