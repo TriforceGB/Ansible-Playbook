@@ -1,3 +1,10 @@
+- name: Base | SSH | Create .shh
+  tags: ssh
+  file:
+    path: "{{user_dir}}/.shh"
+    state: directory
+    mode: "0700"
+
 - name:  Base | SSH | Generate Keys
   become: false
   tags: ssh
