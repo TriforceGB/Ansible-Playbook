@@ -3,7 +3,7 @@
   become: true
   copy:
     src: files/pacman.conf
-    dest: /etc/pacman.conf"
+    dest: /etc/pacman.conf
 
 - name: Arch | Update Package 
   tags: arch,update,package
@@ -12,7 +12,7 @@
     update_cache: true
     upgrade: true
 
-- block:
+- block: 
     - name: Arch | Clone yay repo
       become: false
       tags: arch,yay
