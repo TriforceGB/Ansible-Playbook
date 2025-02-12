@@ -1,0 +1,6 @@
+- name: Temporary Make user have no pass sudo
+  copy:
+    become: true
+    dest: /etc/sudoers.d/temp_nopasswd
+    content: "{{ username }} ALL=(ALL:ALL) NOPASSWD:ALL"
+    mode: 0440

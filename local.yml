@@ -4,6 +4,7 @@
 
   pre_tasks:
     - import_tasks: playbooks/whoami.yml
+    - import_tasks: playbooks/temp_pass.yml
     # - import_tasks: playbooks/whoami_debug.yml
     - import_tasks: playbooks/dependencies.yml
 
@@ -18,3 +19,24 @@
     - role: server
       tags: server
       when: Setup == "2"
+
+    - role: dotfiles
+      tags: dotfiles
+  tasks:
+    - import_tasks: playbooks/temp_remove.yml
+# Game Plan
+# Here some notes that I want to Do now I think
+# 1. either create a non password user to use or have the default user have no password (needed for yay and maybe end_4 dots)
+# 2. Download dotfiles
+# 3. Base Files
+# - download packages
+# 4. Do Workstation
+# - Use the end_4 dots script to install
+# - edit end_4 dots to my personal conf
+# - add what ever other packages I want
+# - remove unwanted packages
+# 5. Do Server?
+# - idk figure this out later when I need to rebuild a server
+# - manily just download docker
+# 7. Add Dotfiles
+# 8. Remove temp user

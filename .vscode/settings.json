@@ -1,4 +1,7 @@
 {
   "ansible.python.interpreterPath": "c:\\Users\\Zach_\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
-  "ansible.ansible.reuseTerminal": false
+  "ansible.ansible.reuseTerminal": false,
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible-lint-config.json": "file:///d%3A/Github/Anisble_Setup/roles/dotfiles/tasks/base.yml"
+  }
 }

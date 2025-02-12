@@ -1,0 +1,5 @@
+- import_tasks: base.yml
+- import_tasks: workstation.yml
+  when: Setup == "1"
+- import_tasks: server.yml
+  when: Setup == "2"

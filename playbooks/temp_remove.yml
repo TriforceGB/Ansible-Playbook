@@ -1,0 +1,5 @@
+- name: Remove Temp Sudo
+  file:
+    become: true
+    path: /etc/sudoers.d/temp_nopasswd
+    state: absent
