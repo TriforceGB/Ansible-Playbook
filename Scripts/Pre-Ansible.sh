@@ -1,5 +1,5 @@
 #!/bin/bash
-#bash -c "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Anisble_Setup/main/Scripts/Pre-Ansible.sh)"
+#bash -c "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Anisble-Playbook/main/Scripts/Pre-Ansible.sh)"
 # && "$ID" != "ubuntu"  add Later
 
 # Check if your Using a Supported OS
@@ -27,4 +27,4 @@ echo -e "What Setup Do You Want?
         (3) Base Install"
 read Setup
 
-ANSIBLE_FORCE_COLOR=true ansible-pull -U https://github.com/TriforceGB/Anisble_Setup.git -Ke "Setup=$Setup"
+ANSIBLE_FORCE_COLOR=true ansible-pull -U https://github.com/TriforceGB/Anisble-Playbook.git -Ke "Setup=$Setup"
