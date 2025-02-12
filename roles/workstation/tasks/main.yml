@@ -1,6 +1,3 @@
-- import_tasks: /Archlinux.yml
-
-
 - name: workstation | Announcement
   tags: always
   debug:
