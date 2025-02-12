@@ -27,4 +27,4 @@ echo -e "What Setup Do You Want?
         (3) Base Install"
 read Setup
 
-ansible-pull -U https://github.com/TriforceGB/Anisble_Setup.git -Ke "Setup=$Setup"
+ANSIBLE_FORCE_COLOR=trueansible-pull -U https://github.com/TriforceGB/Anisble_Setup.git -Ke "Setup=$Setup"
