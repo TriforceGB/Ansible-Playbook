@@ -4,11 +4,11 @@
     value: "{{ username }}" 
     scope: global 
 
-# - name: Git | Set Global Email
-#   git_config:
-#     name: user.email
-#     value: "Zach.Schultz.2.0.1@gmail.com" # My Email
-#     scope: global 
+- name: Git | Set Global Email
+  git_config:
+    name: user.email
+    value: "Zach.Schultz.2.0.1@gmail.com" # My Email
+    scope: global 
 
 - name: Git | Set Global Default Branch
   git_config:

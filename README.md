@@ -12,7 +12,7 @@ Idk will prob make this for when I remake the homeserver on a different OS that 
 ## Uses
 Just run this command and it will take care of the rest of Linux setup
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Ansible_Setup/main/Scripts/Pre-Ansible.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Ansible-Playbook/main/Scripts/Pre-Ansible.sh)"
 ```
 The command will Prompt for a Become Pass which is just your Sudo Password but after that everything will be Automatic
 

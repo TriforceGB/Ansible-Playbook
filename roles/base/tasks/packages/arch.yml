@@ -1,0 +1,24 @@
+- name: Packages | Pacman Base Packages Install
+  become: true
+  pacman:
+    name: 
+    # zsh + stuff needed for plugins
+      - zsh
+      - zoxide
+      - otf-firamono-nerd
+      - fzf
+      - fastfetch
+    # Terminal Editors
+      - nano
+      - vim
+      - nvim
+      - vi #for visudo could remove later
+    # Extra stuff for now
+      - python
+      - htop
+      - cmatrix
+  
+  # tmux
+# fonts
+# tailscale?
+    

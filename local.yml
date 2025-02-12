@@ -13,6 +13,8 @@
     - import_tasks: playbooks/dependencies.yml
 
   roles:
+    - role: townk.beautiful_output #idk 
+  
     - role: base
       tags: base
 
@@ -30,7 +32,6 @@
     - import_tasks: playbooks/temp_remove.yml
 # Game Plan
 # Here some notes that I want to Do now I think
-# 1. either create a non password user to use or have the default user have no password (needed for yay and maybe end_4 dots)
 # 2. Download dotfiles
 # 3. Base Files
 # - download packages

@@ -12,7 +12,7 @@
     path: "{{user_dir}}/.ssh/id_ssh_rsa"
     comment: "{{ username }}@{{ hostname }}"
 
-- name: SSH | Copy Public Key
+- name: SSH | Copy Public Key #Change this ? use bitwardden
   become: false
   tags: ssh
   ansible.posix.authorized_key:

@@ -1,0 +1,23 @@
+- name: Base | zsh | Stow dotfiles
+  become: false
+  shell:
+    cmd: "stow zsh"
+    chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Base | zsh | Change Default Shell
+  become: true
+  user: 
+    name: "{{ username }}"
+    shell: /bin/zsh
+
+- name: nvim | Stow Dotfiles
+  become: false
+  shell:
+    cmd: "stow nvim"
+    chdir: "{{ user_dir }}/.dotfiles/"
+
+# - name: Base | fastfetch | Stow dotfiles
+#   become: false
+#   shell:
+#     cmd: "stow fastfetch"
+#     chdir: "{{ user_dir }}/.dotfiles/"
