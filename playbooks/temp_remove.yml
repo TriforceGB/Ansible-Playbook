@@ -1,4 +1,4 @@
-- name: Remove Temp Sudo
+- name: Post-Tasks | Remove Temp Sudo
   file:
     become: true
     path: /etc/sudoers.d/temp_nopasswd

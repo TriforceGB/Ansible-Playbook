@@ -3,9 +3,13 @@
   become: false
 
   pre_tasks:
+    - name: Pre-Tasks | DEBUG NAME
+      tags: debug
+      debug:
+        msg: "{{ ansible_env.USER }}"
     - import_tasks: playbooks/whoami.yml
+    - import_tasks: playbooks/whoami_debug.yml
     - import_tasks: playbooks/temp_pass.yml
-    # - import_tasks: playbooks/whoami_debug.yml
     - import_tasks: playbooks/dependencies.yml
 
   roles:
