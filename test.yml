@@ -1,0 +1,7 @@
+- hosts: localhost
+  become: false
+
+  tasks:
+    - name: Pre-Tasks | DEBUG NAME
+      debug:
+        msg: "{{ ansible_env.USER }}"
