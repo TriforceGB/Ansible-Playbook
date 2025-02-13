@@ -11,7 +11,7 @@
     # Terminal Editors
       - nano
       - vim
-      - nvim
+      - neovim
       - vi #for visudo could remove later
     # Extra stuff for now
       - python
