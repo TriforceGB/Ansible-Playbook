@@ -1,0 +1,4 @@
+- name: Auto-answer 'n' twice using echo
+  become: false
+  shell: 
+    cmd: echo -e "n\nn" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")

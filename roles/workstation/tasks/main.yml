@@ -1,12 +1,2 @@
-- name: workstation | Announcement
-  tags: always
-  debug:
-    msg: WE are Base
-- name: workstation | DEBUG NAME
-  tags: always
-  debug:
-    msg: "{{ username }}"
-# terminal elmulator
-# file manager
-# discord
-# obsidian
+- import_tasks: desktop/hyprland/end-4.yml
+  when: distribution == "Archlinux"
