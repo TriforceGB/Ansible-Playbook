@@ -12,6 +12,12 @@ if [ "$ID" == "arch" ]; then
     if ! pacman -Q git; then
     sudo pacman -S git --noconfirm
     fi
+    if ! pacman -Q python; then
+    sudo pacman -S python --noconfirm
+    fi
+    if ! pacman -Q python-watchdog; then
+    sudo pacman -S python-watchdog --noconfirm
+    fi
 elif [ "$ID" == "ubuntu" ]; then
     echo "Unfortunately Your OS is not supported with this Ansiable Playbook"
     exit 1
