@@ -7,14 +7,14 @@
       tags: debug
       debug:
         msg: "{{ ansible_env.USER }}"
-    - import_tasks: playbooks/whoami.yml
-    - import_tasks: playbooks/whoami_debug.yml
-    - import_tasks: playbooks/temp_pass.yml
-    - import_tasks: playbooks/dependencies.yml
+    - import_tasks: Pre-Tasks/whoami.yml
+    - import_tasks: Pre-Tasks/whoami_debug.yml
+    - import_tasks: Pre-Tasks/temp_pass.yml
+    - import_tasks: Pre-Tasks/dependencies.yml
 
   roles:
-    - role: townk.beautiful_output #idk 
-  
+    - role: townk.beautiful_output #idk
+
     - role: base
       tags: base
 
@@ -29,7 +29,7 @@
     - role: dotfiles
       tags: dotfiles
   tasks:
-    - import_tasks: playbooks/temp_remove.yml
+    - import_tasks: Post-Tasks/temp_remove.yml
 # Game Plan
 # Here some notes that I want to Do now I think
 # 2. Download dotfiles
