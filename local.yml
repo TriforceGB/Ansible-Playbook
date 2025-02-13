@@ -29,7 +29,7 @@
     - role: dotfiles
       tags: dotfiles
   tasks:
-    - import_tasks: Post-Tasks/temp_remove.yml
+    # - import_tasks: Post-Tasks/temp_remove.yml
 # Game Plan
 # Here some notes that I want to Do now I think
 # 2. Download dotfiles
