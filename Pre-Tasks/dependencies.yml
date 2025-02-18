@@ -1,8 +1,8 @@
 - name: Pre-Tasks | Pacman Dependencies for Playbook
   become: true
+  tags: arch,package
   pacman:
     name:
-      - git
       - stow
       - base-devel #?
   when: distribution == "Archlinux"

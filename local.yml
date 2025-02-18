@@ -7,6 +7,7 @@
     - import_tasks: Pre-Tasks/whoami_debug.yml
     - import_tasks: Pre-Tasks/temp_pass.yml
     - import_tasks: Pre-Tasks/update_packages.yml
+    - import_tasks: Pre-Tasks/dependencies.yml
 
   roles:
     - role: base

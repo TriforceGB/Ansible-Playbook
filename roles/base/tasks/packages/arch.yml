@@ -1,5 +1,6 @@
 - name: Packages | Pacman Base Packages Install
   become: true
+  tags: arch,package
   pacman:
     name: 
     # zsh + stuff needed for plugins
@@ -16,7 +17,7 @@
     # Extra stuff for now
       - python
       - htop
-      - cmatrix
+      - cmatrix 
   
   # tmux
 # fonts
