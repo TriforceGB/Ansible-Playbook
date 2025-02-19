@@ -1,0 +1,7 @@
+- name: Arch | Update Package 
+  tags: arch,update,package
+  become: true
+  when: distribution == "Archlinux"
+  pacman:
+    update_cache: true
+    upgrade: true

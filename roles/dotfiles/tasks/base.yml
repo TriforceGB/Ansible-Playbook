@@ -1,4 +1,5 @@
 - name: Base | zsh | Stow dotfiles
+  tags: zsh,dotfiles
   become: false
   shell:
     cmd: "stow zsh"

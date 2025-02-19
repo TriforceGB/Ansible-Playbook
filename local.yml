@@ -3,18 +3,13 @@
   become: false
 
   pre_tasks:
-    - name: Pre-Tasks | DEBUG NAME
-      tags: debug
-      debug:
-        msg: "{{ ansible_env.USER }}"
     - import_tasks: Pre-Tasks/whoami.yml
     - import_tasks: Pre-Tasks/whoami_debug.yml
     - import_tasks: Pre-Tasks/temp_pass.yml
+    - import_tasks: Pre-Tasks/update_packages.yml
     - import_tasks: Pre-Tasks/dependencies.yml
 
   roles:
-    # - role: townk.beautiful_output #idk
-
     - role: base
       tags: base
 

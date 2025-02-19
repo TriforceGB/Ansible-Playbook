@@ -1,6 +1,5 @@
 - name: Dotfiles | Clone Dotfiles Repo
-  become: false #Has to be non Sudo so that we can user the right home folder
-  tags: git,dotfiles
+  tags: dotfiles
   git:
     repo: https://github.com/TriforceGB/.dotfiles.git
     dest: "~/.dotfiles"
