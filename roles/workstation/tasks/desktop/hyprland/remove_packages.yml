@@ -4,7 +4,15 @@
     name: 
       - fish
       - foot
-- name: workstation | hyprland | Remove Unwanted Folders
+- name: workstation | hyprland | Remove hypr config
+  file:
+    path: ~/.config/hypr
+    state: absent
+- name: workstation | hyprland | Remove fish config
+  file:
+    path: ~/.config/fish
+    state: absent
+
 #files I want to Remove
 # fish config
 # /hypr/

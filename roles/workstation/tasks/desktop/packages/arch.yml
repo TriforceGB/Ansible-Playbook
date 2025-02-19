@@ -2,34 +2,43 @@
   become: true
   pacman:
     name: 
+    # Base Workstations Requirements
       - sddm
       - uwsm
+    # Workstation Basics Needs
       - alacritty
       - firefox
+      - vlc
+    # Gaming
+      - steam
+    # Coding and Development
+      - code
+      - audacity
+    # Others
+      - obs-studio
+      - obsidian
+      - syncthing
+- name: Packages | yay Workstation Packages Install
+  become: true
+  yay:
+    name: 
+    # Workstation Basics Needs
+      - zen-browser
+      - vesktop
+      - wootomation-appimage 
 
 
-# zen browers
-# discord + vencord
-# steam
-# vscode
 # vm stuff
-# wootomation
+# emulators 
 # qbittorent
-# emulators
 # Da Vinci resolve
-# obs
 # some photo editor
 # armoury Create?
 # razer Synapse
 # makeMKV?
-# Obsidian
-# Syncthing
 # Bitwarden? (might be base)
-# VLC
-# Audacity
 # Parsec?
 # some file manager
 # Libra office
 # Tailscale
 # 3d printer stuff
-# 
