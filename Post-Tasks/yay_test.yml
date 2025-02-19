@@ -1,0 +1,5 @@
+- name: Packages | test yay
+  become: true
+  yay:
+    name: 
+      - lolcat
