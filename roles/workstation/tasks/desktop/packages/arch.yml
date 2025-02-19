@@ -1,0 +1,35 @@
+- name: Packages | Pacman Workstation Packages Install
+  become: true
+  pacman:
+    name: 
+      - sddm
+      - uwsm
+      - alacritty
+      - firefox
+
+
+# zen browers
+# discord + vencord
+# steam
+# vscode
+# vm stuff
+# wootomation
+# qbittorent
+# emulators
+# Da Vinci resolve
+# obs
+# some photo editor
+# armoury Create?
+# razer Synapse
+# makeMKV?
+# Obsidian
+# Syncthing
+# Bitwarden? (might be base)
+# VLC
+# Audacity
+# Parsec?
+# some file manager
+# Libra office
+# Tailscale
+# 3d printer stuff
+# 

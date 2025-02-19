@@ -1,4 +1,5 @@
-- name: downloading end-4 dots
+- name: workstation | hyprland | downloading end-4 dots
   become: false
   shell: 
-    cmd: echo -e "n\nn" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh")
+    cmd: echo -e "n\nn" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh") #enter n twice
+

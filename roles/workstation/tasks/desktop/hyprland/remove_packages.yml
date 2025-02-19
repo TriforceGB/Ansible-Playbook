@@ -1,0 +1,12 @@
+- name: workstation | hyprland | Remove Unwanted Packages
+  pacman:
+    state: absent
+    name: 
+      - fish
+      - foot
+- name: workstation | hyprland | Remove Unwanted Folders
+#files I want to Remove
+# fish config
+# /hypr/
+# nautlilus?
+#
