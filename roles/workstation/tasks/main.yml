@@ -1,2 +1,9 @@
 - import_tasks: desktop/hyprland/end-4.yml
   when: distribution == "Archlinux"
+- import_tasks: desktop/hyprland/remove_packages.yml
+  when: distribution == "Archlinux"
+- import_tasks: packages/arch.yml
+#files I need to edit
+# fuzzle?
+# gtk?
+# hypr

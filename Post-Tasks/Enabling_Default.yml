@@ -1,0 +1,6 @@
+- name: Base | zsh | Change Default Shell
+  become: true
+  user: 
+    name: "{{ username }}"
+    shell: /bin/zsh
+#enable sddm

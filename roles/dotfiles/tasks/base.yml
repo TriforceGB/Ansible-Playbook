@@ -5,15 +5,7 @@
     cmd: "stow zsh"
     chdir: "{{ user_dir }}/.dotfiles/"
 
-- name: Base | zsh | Change Default Shell
-  tags: zsh
-  become: true
-  user: 
-    name: "{{ username }}"
-    shell: /bin/zsh
-
-- name: nvim | Stow Dotfiles
-  tags: nvim,dotfiles
+- name: Base | nvim | Stow Dotfiles
   become: false
   shell:
     cmd: "stow nvim"
