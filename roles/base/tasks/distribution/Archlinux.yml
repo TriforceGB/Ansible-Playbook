@@ -13,7 +13,7 @@
 
 - block: 
     - name: Arch | Clone yay repo
-      become: false
+      become: true
       tags: arch,yay
       git:
         repo: https://aur.archlinux.org/yay.git
