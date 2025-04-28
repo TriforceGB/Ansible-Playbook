@@ -10,21 +10,22 @@
       - fzf
       - fastfetch
       - eza
+      - tmux
     # Terminal Editors
       - nano
       - vim
       - neovim
       - vi #for visudo could remove later
+    # File Management and view
       - less
       - bat
       - superfile
-      - git
-    # Extra stuff for now
-      - python
+    # System View
       - htop
       - btop
-      - cmatrix
+    # Coding Languages
+      - python
+    # Extra
       - tldr
+      - cmatrix
       - tailscale
-# tmux
-# fonts
