@@ -9,20 +9,23 @@
       - otf-firamono-nerd
       - fzf
       - fastfetch
+      - eza
+      - tmux
     # Terminal Editors
       - nano
       - vim
       - neovim
       - vi #for visudo could remove later
+    # File Management and view
       - less
-    # Extra stuff for now
-      - python
+      - bat
+      - superfile
+    # System View
       - htop
-      - cmatrix 
-  
-  # tmux
-# fonts
-# tailscale?
-# bit warden might count as dependencies
-# superfile
-# yazi
+      - btop
+    # Coding Languages
+      - python
+    # Extra
+      - tldr
+      - cmatrix
+      - tailscale

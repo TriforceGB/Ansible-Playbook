@@ -24,6 +24,5 @@
     - role: dotfiles
       tags: dotfiles
   tasks:
-    - import_tasks: Post-Tasks/yay_test.yml
+    - import_tasks: Post-Tasks/Enabling_default.yml
     - import_tasks: Post-Tasks/temp_remove.yml
-#need to enable extra and Multilib
