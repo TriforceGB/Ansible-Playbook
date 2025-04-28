@@ -2,4 +2,4 @@
   become: true
   yay:
     name: 
-      - lolcat
+      - pokemon-colorscripts-git 
