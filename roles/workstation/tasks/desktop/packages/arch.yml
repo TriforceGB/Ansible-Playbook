@@ -7,8 +7,9 @@
       - uwsm
     # Workstation Basics Needs
       - alacritty
-      - firefox
+      - firefox # could remove just for zen depending on how long it takes for the dev team to fix some of my issues
       - vlc
+      - thunderbird
     # Gaming
       - steam
     # Coding and Development
@@ -18,6 +19,7 @@
       - obs-studio
       - obsidian
       - syncthing
+
 - name: Packages | yay Workstation Packages Install
   become: true
   yay:

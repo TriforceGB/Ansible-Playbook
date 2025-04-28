@@ -8,3 +8,6 @@
 # fuzzle?
 # gtk?
 # hypr
+
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+# https://github.com/Keyitdev/sddm-astronaut-theme
