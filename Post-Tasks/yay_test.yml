@@ -1,5 +1,5 @@
-# - name: Packages | test yay
-#   become: true
-#   yay:
-#     name: 
-#       - pokemon-colorscripts-git
+- name: Packages | test yay
+  become: true
+  yay:
+    name: 
+      - pokemon-colorscripts-git
