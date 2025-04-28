@@ -9,18 +9,22 @@
       - otf-firamono-nerd
       - fzf
       - fastfetch
+      - eza
     # Terminal Editors
       - nano
       - vim
       - neovim
       - vi #for visudo could remove later
       - less
+      - bat
+      - superfile
+      - git
     # Extra stuff for now
       - python
       - htop
-      - cmatrix 
-  
-  # tmux
+      - btop
+      - cmatrix
+      - tldr
+      - tailscale
+# tmux
 # fonts
-# tailscale?
-    
