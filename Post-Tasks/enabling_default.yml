@@ -3,4 +3,4 @@
   user: 
     name: "{{ username }}"
     shell: /bin/zsh
-#enable sddm
+#enable sddm I need to install this later

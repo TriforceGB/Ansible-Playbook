@@ -24,5 +24,5 @@
     - role: dotfiles
       tags: dotfiles
   tasks:
-    - import_tasks: Post-Tasks/Enabling_default.yml
+    - import_tasks: Post-Tasks/enabling_default.yml
     - import_tasks: Post-Tasks/temp_remove.yml
