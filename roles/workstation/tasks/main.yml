@@ -1,9 +1,9 @@
 - name: workstation | Arch Install
   when: distribution == "Archlinux"
   block:
-    - import_tasks: desktop/hyprland/end-4.yml 
+    - import_tasks: desktop/hyprland/end-4.yml
     - import_tasks: desktop/hyprland/remove_packages.yml
-    - import_tasks: packages/arch.yml
+    - import_tasks: packages/arch-destop.yml
 #files I need to edit
 # fuzzle?
 # gtk?
