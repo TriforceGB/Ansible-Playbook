@@ -10,15 +10,23 @@
       - firefox # could remove just for zen depending on how long it takes for the dev team to fix some of my issues
       - vlc
       - thunderbird
+      - bitwarden # Out of Date Right Now maybe use the AUR Bin
+      - rofi-rbw # rofi UI for Bitwarden
     # Gaming
       - steam
-    # Coding and Development
+      - lutris
+      - prismlauncher 
+    # Coding and Creation
       - code
       - audacity
+      - gimp
+      - libreoffice-fresh
+      - loupe
     # Others
       - obs-studio
       - obsidian
       - syncthing
+      - qbittorrent 	
 
 - name: Packages | yay Workstation Packages Install
   become: true
@@ -27,20 +35,15 @@
     # Workstation Basics Needs
       - zen-browser
       - vesktop
+    # Coding and Creation
+      - davinci-resolve
+    # Gaming
       - wootomation-appimage 
 
 
 # vm stuff
+# VueTorrent
 # emulators 
-# qbittorent
-# Da Vinci resolve
-# some photo editor
-# armoury Create?
-# razer Synapse
-# makeMKV?
-# Bitwarden? (might be base)
-# Parsec?
 # some file manager
-# Libra office
-# Tailscale
 # 3d printer stuff
+# https://alternativeto.net/software/razer-synapse/?license=opensource
