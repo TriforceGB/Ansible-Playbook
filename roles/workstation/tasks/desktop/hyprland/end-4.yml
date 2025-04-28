@@ -1,3 +1,8 @@
+- name: Workstation | hyprland | Staring end-4 dots
+  tags: debug
+  debug:
+    msg: "Staring the Download for hyprland Dots, This will take a long while so let it load"
+
 - name: Workstation | hyprland | downloading end-4 dots
   become: false
   when: distribution == "Archlinux"
