@@ -1,18 +1,18 @@
-- name: SSH | Create .ssh
+- name: Base | SSH | Create .ssh
   tags: ssh
   file:
     path: "{{user_dir}}/.ssh"
     state: directory
     mode: "0700"
 
-- name: SSH | Generate Keys
+- name: Base | SSH | Generate Keys
   become: false
   tags: ssh
   community.crypto.openssh_keypair:
     path: "{{user_dir}}/.ssh/id_ssh_rsa"
     comment: "{{ username }}@{{ hostname }}"
 
-- name: SSH | Copy Public Key #Change this ? use bitwardden
+- name: Base | SSH | Copy Public Key #Change this ? use bitwardden
   become: false
   tags: ssh
   ansible.posix.authorized_key:

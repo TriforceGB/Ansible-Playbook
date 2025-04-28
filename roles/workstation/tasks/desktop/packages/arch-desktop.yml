@@ -1,4 +1,4 @@
-- name: Packages | Pacman Workstation Packages Install
+- name: Workstation | Packages | Pacman Workstation Packages Install
   become: true
   pacman:
     name: 
@@ -28,7 +28,7 @@
       - syncthing
       - qbittorrent 	
 
-- name: Packages | yay Workstation Packages Install
+- name: Workstation | Packages | yay Workstation Packages Install
   become: true
   yay:
     name: 

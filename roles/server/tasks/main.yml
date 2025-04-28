@@ -1,9 +1,0 @@
-- name: Server | Announcement
-  tags: always
-  debug:
-    msg: WE are Base
-- name: Server | DEBUG NAME
-  tags: always
-  debug:
-    msg: "{{ username }}"
-# docker

@@ -1,4 +1,4 @@
-- name: Packages | Pacman Base Packages Install
+- name: Base | Packages | Pacman Base Packages Install
   become: true
   tags: arch,package
   pacman:

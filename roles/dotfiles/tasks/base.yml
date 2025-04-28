@@ -1,17 +1,17 @@
-- name: Base | zsh | Stow dotfiles
+- name: Dotfiles | Base | zsh dotfiles
   tags: zsh,dotfiles
   become: false
   shell:
     cmd: "stow zsh"
     chdir: "{{ user_dir }}/.dotfiles/"
 
-- name: Base | nvim | Stow Dotfiles
+- name: Dotfiles | Base | nvim dotfiles
   become: false
   shell:
     cmd: "stow nvim"
     chdir: "{{ user_dir }}/.dotfiles/"
 
-# - name: Base | fastfetch | Stow dotfiles
+# - name: Dotfiles | Base | fastfetch dotfiles
 #   become: false
 #   shell:
 #     cmd: "stow fastfetch"

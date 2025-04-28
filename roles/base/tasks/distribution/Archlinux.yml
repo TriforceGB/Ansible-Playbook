@@ -1,18 +1,18 @@
-- name: Arch | Update pacman.conf
+- name: Base | Arch | Update pacman.conf
   tags: arch,pacman
   become: true
   copy:
     src: files/pacman.conf
     dest: /etc/pacman.conf
 
-- name: Arch | Update Cache
+- name: Base | Arch | Update Cache
   tags: arch,update,package
   become: true
   pacman:
     update_cache: true
 
 - block: 
-    - name: Arch | Clone yay repo
+    - name: Base | Arch | Clone yay repo
       become: false
       tags: arch,yay
       git:
@@ -20,14 +20,14 @@
         dest: "/tmp/yay"
         clone: yes
 
-    - name: Arch | Install yay
+    - name: Base | Arch | Install yay
       become: false
       tags: arch,yay
       command: 
         cmd: makepkg -sfi --noconfirm 
         chdir: "/tmp/yay"
 
-    - name: Arch | Remove yay build directory
+    - name: Base | Arch | Remove yay build directory
       tags: arch,yay,remove
       file:
         path: "/tmp/yay"

@@ -1,24 +1,24 @@
-- name: Pre-Tasks | DEBUG SETUP TEST
+- name: PRE | DEBUG | var print test
   tags: debug
   debug:
     msg: "{{ Setup }}"
 
-- name: Pre-Tasks | DEBUG NAME
+- name: PRE | DEBUG | print name
   tags: debug
   debug:
     msg: "{{ username }}"
 
-- name: Pre-Tasks | DEBUG DIR
+- name: PRE | DEBUG | print dir
   tags: debug
   debug:
     msg: "{{ user_dir}}"
 
-- name: Pre-Tasks | DEBUG OS
+- name: PRE | DEBUG | print ditro
   tags: debug
   debug:
     msg: "{{ distribution }}"
 
-- name: Pre-Tasks | DEBUG Hostname
+- name: PRE | DEBUG | print Hostname
   tags: debug
   debug:
     msg: "{{ hostname }}"
