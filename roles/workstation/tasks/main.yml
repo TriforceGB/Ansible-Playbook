@@ -3,7 +3,7 @@
   block:
     - import_tasks: desktop/hyprland/end-4.yml
     - import_tasks: desktop/hyprland/remove_packages.yml
-    - import_tasks: packages/arch-desktop.yml
+    - import_tasks: desktop/packages/arch-desktop.yml
 #files I need to edit
 # fuzzle?
 # gtk?
