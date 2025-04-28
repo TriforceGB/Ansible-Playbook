@@ -1,5 +1,6 @@
 #!/bin/bash
 #bash -c "$(curl -fsSL https://raw.githubusercontent.com/TriforceGB/Ansible-Playbook/main/Scripts/Pre-Ansible.sh)"
+##bash -c "$(curl -fsSL https://schultzserver.ca/ansible)" Not broken
 # && "$ID" != "ubuntu"  add Later
 
 # Check if your Using a Supported OS
