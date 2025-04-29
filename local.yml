@@ -3,7 +3,6 @@
   become: false
 
   pre_tasks:
-    - import_tasks: Post-Tasks/yay-test.yml
     - import_tasks: Pre-Tasks/whoami.yml
     - import_tasks: Pre-Tasks/whoami_debug.yml
     - import_tasks: Pre-Tasks/temp_pass.yml
@@ -25,5 +24,6 @@
     - role: dotfiles
       tags: dotfiles
   tasks:
+    - import_tasks: Post-Tasks/yay-test.yml
     - import_tasks: Post-Tasks/enabling_default.yml
     - import_tasks: Post-Tasks/temp_remove.yml
