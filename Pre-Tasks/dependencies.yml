@@ -1,4 +1,4 @@
-- name: Pre-Tasks | Pacman Dependencies for Playbook
+- name: PRE | Pacman Dependencies for Playbook
   become: true
   tags: arch,package
   pacman:

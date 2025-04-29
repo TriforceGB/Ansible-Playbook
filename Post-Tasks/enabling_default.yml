@@ -1,4 +1,4 @@
-- name: Base | zsh | Change Default Shell
+- name: POST | zsh | Change Default Shell
   become: true
   user: 
     name: "{{ username }}"
