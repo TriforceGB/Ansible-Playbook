@@ -1,4 +1,4 @@
-- name: Pre-Tasks | Temporary Make user have no pass sudo
+- name: PRE | Temporary Make user have no pass sudo
   become: true
   copy:
     dest: /etc/sudoers.d/temp_nopasswd

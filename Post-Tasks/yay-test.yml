@@ -2,10 +2,4 @@
   become: true
   yay:
     name: 
-    # Workstation Basics Needs
-      - zen-browser
-      - vesktop
-    # Coding and Creation
-      - davinci-resolve
-    # Gaming
-      - wootomation-appimage
+      - pokemon-colorscripts-git 
