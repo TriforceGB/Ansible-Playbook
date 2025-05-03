@@ -3,15 +3,25 @@
   pacman:
     name: 
     # Base Workstations Requirements
-      - sddm
       - uwsm
+      - grub
+      - timeshift
+    # SDDM + Theme requirements
+      - sddm
+      - qt6
+      - qt6-svg
+      - qt6-virtualkeyboard
+      - qt6-multimedia
+      - qt6-multimedia-ffmpeg 
     # Workstation Basics Needs
-      - alacritty
+      # - alacritty
       - firefox # could remove just for zen depending on how long it takes for the dev team to fix some of my issues
       - vlc
       - thunderbird
       - bitwarden # Out of Date Right Now maybe use the AUR Bin
-      - rofi-rbw # rofi UI for Bitwarden
+      - rofi-rbw # rofi UI for Bitwarden?
+      - mission-center # Task Manager
+      - 
     # Gaming
       - steam
       - lutris
@@ -29,12 +39,14 @@
       - qbittorrent 	
 
 - name: Workstation | Packages | yay Workstation Packages Install
-  become: true
+  become: false #?
   yay:
     name: 
     # Workstation Basics Needs
       - zen-browser
       - vesktop
+      - archlinux-tweak-tool-git
+      - localsend
     # Coding and Creation
       - davinci-resolve
     # Gaming

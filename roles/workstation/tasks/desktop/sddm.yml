@@ -1,0 +1,15 @@
+- name: Workstation | sddm | Enabling on Startup
+  become: true
+  ansible.builtin.systemd_service:
+    name: sddm
+    enabled: true
+
+# sudo git clone -b master --depth 1 https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+# /usr/share/fonts/
+  # sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
+# /etc/sddm.conf
+  # [Theme]
+  # Current=sddm-astronaut-theme
+# /etc/sddm.conf.d/virtualkbd.conf
+  #[General]
+  #InputMethod=qtvirtualkeyboard

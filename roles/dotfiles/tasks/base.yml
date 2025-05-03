@@ -11,8 +11,8 @@
     cmd: "stow nvim"
     chdir: "{{ user_dir }}/.dotfiles/"
 
-# - name: Dotfiles | Base | fastfetch dotfiles
-#   become: false
-#   shell:
-#     cmd: "stow fastfetch"
-#     chdir: "{{ user_dir }}/.dotfiles/"
+- name: Dotfiles | Base | fastfetch dotfiles
+  become: false
+  shell:
+    cmd: "stow fastfetch"
+    chdir: "{{ user_dir }}/.dotfiles/"

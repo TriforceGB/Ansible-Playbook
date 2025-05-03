@@ -1,9 +1,13 @@
 - name: Workstation | Hyprland Install
   block:
     - import_tasks: desktop/hyprland/end-4.yml
-    # - import_tasks: desktop/hyprland/remove_packages.yml
+    - import_tasks: desktop/hyprland/remove_packages.yml
+
+- when: distribution == "Archlinux"
+  import_tasks: desktop/grub.yml
 
 - import_tasks: desktop/packages/arch-desktop.yml
+- import_tasks: desktop/sddm.yml
 #files I need to edit
 # fuzzle?
 # gtk?

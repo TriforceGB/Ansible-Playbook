@@ -1,0 +1,6 @@
+- name: Dotfiles | Workstation | hypr dotfiles
+  tags: zsh,dotfiles
+  become: false
+  shell:
+    cmd: "stow hypr"
+    chdir: "{{ user_dir }}/.dotfiles/"
