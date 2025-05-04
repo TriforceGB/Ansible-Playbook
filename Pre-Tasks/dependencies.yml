@@ -4,5 +4,5 @@
   pacman:
     name:
       - stow
-      - base-devel #?
+      - base-devel
   when: distribution == "Archlinux"

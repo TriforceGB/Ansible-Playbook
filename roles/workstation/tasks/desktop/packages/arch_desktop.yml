@@ -47,8 +47,6 @@
       - vesktop
       - archlinux-tweak-tool-git
       - localsend
-    # Coding and Creation
-      - davinci-resolve
     # Gaming
       - wootomation-appimage
     # Music
