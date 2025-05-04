@@ -5,6 +5,7 @@
     dest: "~/.dotfiles"
     clone: yes
     update: yes
+    force: no
 
 - name: Dotfiles | Create .config
   file:
