@@ -4,20 +4,16 @@
       file:
         path: ~/.config/hypr
         state: absent
-    # - name: Workstation | hyprland | Remove fish config
-    #   file:
-    #     path: ~/.config/fish
-    #     state: absent
-    # - name: Workstation | hyprland | Remove foot config
-    #   file:
-    #     path: ~/.config/foot
-    #     state: absent
+    - name: Workstation | hyprland | Remove fish config
+      file:
+        path: ~/.config/fish
+        state: absent
     - name: Workstation | hyprland | Remove starship.toml
       file:
         path: ~/.config/starship.toml
         state: absent
 
 #files I want to Remove
-# fish config
+
 # /hypr/
 # nautlilus

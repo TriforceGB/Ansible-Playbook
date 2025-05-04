@@ -6,6 +6,8 @@
       - uwsm
       - grub
       - timeshift
+      - nautilus
+      - gparted
     # SDDM + Theme requirements
       - sddm
       - qt6
@@ -17,15 +19,13 @@
       # - alacritty
       - firefox # could remove just for zen depending on how long it takes for the dev team to fix some of my issues
       - vlc
-      - thunderbird
       - bitwarden # Out of Date Right Now maybe use the AUR Bin
-      - rofi-rbw # rofi UI for Bitwarden?
       - mission-center # Task Manager
-      - 
     # Gaming
       - steam
       - lutris
       - prismlauncher 
+      - openrazer-daemon
     # Coding and Creation
       - code
       - audacity
@@ -36,26 +36,28 @@
       - obs-studio
       - obsidian
       - syncthing
-      - qbittorrent 	
+      - qbittorrent
 
 - name: Workstation | Packages | yay Workstation Packages Install
   become: false #?
   yay:
     name: 
     # Workstation Basics Needs
-      - zen-browser
+      - zen-browser-bin
       - vesktop
       - archlinux-tweak-tool-git
       - localsend
     # Coding and Creation
       - davinci-resolve
     # Gaming
-      - wootomation-appimage 
+      - wootomation-appimage
+    # Music
+      - spotify
+      - spicetify-cli
 
 
 # vm stuff
-# VueTorrent
 # emulators 
-# some file manager
 # 3d printer stuff
-# https://alternativeto.net/software/razer-synapse/?license=opensource
+# https://openrazer.github.io/#features
+# https://polychromatic.app/features/
