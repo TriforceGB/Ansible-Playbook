@@ -1,10 +1,10 @@
 - name: Workstation | Hyprland Install
   block:
-    - import_tasks: desktop/hyprland/end-4.yml
+    - import_tasks: desktop/hyprland/end_4.yml
     - import_tasks: desktop/hyprland/remove_conf.yml
 
 - when: distribution == "Archlinux"
   import_tasks: desktop/grub.yml
 
-- import_tasks: desktop/packages/arch-desktop.yml
+- import_tasks: desktop/packages/arch_desktop.yml
 - import_tasks: desktop/sddm.yml
