@@ -13,6 +13,7 @@
     depth: 1
     single_branch: yes
     update: yes
+    force: no
 
 - name: Workstation | sddm | copy fonts
   become: true
