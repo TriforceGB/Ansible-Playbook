@@ -10,7 +10,7 @@
     dest: "/usr/share/sddm/themes/sddm-astronaut-theme"
     clone: yes
     depth: 1
-    branch: master
+    single_branch: yes
     update: yes
 
 - name: Workstation | sddm | copy fonts
