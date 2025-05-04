@@ -20,9 +20,6 @@
     src: /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/*
     dest: /usr/share/fonts/
     mode: 644
-    content: |
-      [General]
-      InputMethod=qtvirtualkeyboard
 
 - name: Workstation | sddm | create sddm.conf
   become: true
