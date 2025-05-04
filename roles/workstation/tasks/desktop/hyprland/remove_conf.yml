@@ -12,6 +12,10 @@
       file:
         path: ~/.config/starship.toml
         state: absent
+    - name: Workstation | hyprland | Remove zshrc.d
+      file:
+        path: ~/.config/zshrc.d
+        state: absent
 
 #files I want to Remove
 
