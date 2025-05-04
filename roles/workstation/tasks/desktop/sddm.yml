@@ -49,6 +49,6 @@
 - name: Workstation | sddm | Selected Sakura Theme
   become: true
   lineinfile:
-    path: /etc/defaults/grub/usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
+    path: /usr/share/sddm/themes/sddm-astronaut-theme/metadata.desktop
     regexp: '^ConfigFile='
     line: 'ConfigFile=Themes/pixel_sakura.conf'
