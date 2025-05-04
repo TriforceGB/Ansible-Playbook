@@ -45,3 +45,10 @@
     content: |
       [General]
       InputMethod=qtvirtualkeyboard
+
+- name: Workstation | sddm | Clone crossgrub
+  become: true
+  lineinfile:
+    path: /etc/defaults/grub
+    regexp: '^ConfigFile='
+    line: 'ConfigFile=Themes/pixel_sakura.conf'

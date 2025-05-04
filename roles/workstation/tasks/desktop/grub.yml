@@ -1,0 +1,32 @@
+- name: Workstation | grub | Clone crossgrub
+  become: true
+  git:
+    repo: https://github.com/krypciak/crossgrub
+    dest: "/tmp/crossgrub"
+    clone: yes
+    depth: 1
+    single_branch: yes
+    update: yes
+  
+- name: Workstation | grub | Install theme
+  become: true
+  shell: 
+    cmd: bash ./install.sh
+
+- name: Workstation | grub | Clone crossgrub
+  become: true
+  lineinfile:
+    path: /etc/defaults/grub
+    regexp: 'GRUB_THEME='
+    line: 'GRUB_THEME=/boot/grub/themes/crossgrub/theme.txt'
+
+- name: Workstation | grub | Install theme
+  become: true
+  shell: 
+    cmd: grub-mkconfig -o /boot/grub/grub.cfg
+
+- name: Base | Arch | Remove yay build directory
+  become: true
+  file:
+    path: "/tmp/crossgrub"
+    state: absent
