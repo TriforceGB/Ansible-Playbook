@@ -14,7 +14,7 @@
     chdir: "/tmp/crossgrub"
     cmd: bash ./install.sh
 
-- name: Workstation | grub | edit grub defaults
+- name: Workstation | grub | edit grub default
   become: true
   lineinfile:
     path: /etc/default/grub
