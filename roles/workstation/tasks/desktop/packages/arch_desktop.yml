@@ -25,7 +25,6 @@
       - steam
       - lutris
       - prismlauncher 
-      - openrazer-daemon
     # Coding and Creation
       - code
       - audacity
@@ -39,7 +38,7 @@
       - qbittorrent
 
 - name: Workstation | Packages | yay Workstation Packages Install
-  become: false #?
+  become: false
   yay:
     name: 
     # Workstation Basics Needs
