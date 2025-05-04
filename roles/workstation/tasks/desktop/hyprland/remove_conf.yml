@@ -4,6 +4,10 @@
       file:
         path: ~/.config/hypr
         state: absent
+    - name: Workstation | hyprland | Remove ags config
+      file:
+        path: ~/.config/ags
+        state: absent
     - name: Workstation | hyprland | Remove fish config
       file:
         path: ~/.config/fish
