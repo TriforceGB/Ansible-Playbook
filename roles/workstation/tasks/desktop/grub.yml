@@ -26,7 +26,7 @@
   shell: 
     cmd: grub-mkconfig -o /boot/grub/grub.cfg
 
-- name: Base | Arch | Remove crossgrub build directory
+- name: Base | grub | Remove crossgrub build directory
   become: true
   file:
     path: "/tmp/crossgrub"
