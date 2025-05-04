@@ -30,6 +30,12 @@
       [Theme]
       Current=sddm-astronaut-theme
 
+- name: Workstation | sddm | Create sddm.conf.d
+  file:
+    path: "/etc/sddm.conf.d"
+    state: directory
+    mode: 644
+
 - name: Workstation | sddm | create virtualkbd.conf
   become: true
   copy:
@@ -38,9 +44,3 @@
     content: |
       [General]
       InputMethod=qtvirtualkeyboard
-
-    
-
-
-# /usr/share/fonts/
-  # sudo cp -r /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
