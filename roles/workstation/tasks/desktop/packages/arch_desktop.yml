@@ -43,7 +43,7 @@
     name: 
     # Workstation Basics Needs
       - zen-browser-bin
-      - vesktop
+      - vesktop-bin
       - archlinux-tweak-tool-git
       - localsend
     # Gaming
