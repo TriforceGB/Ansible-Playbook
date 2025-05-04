@@ -14,10 +14,10 @@
     chdir: "/tmp/crossgrub"
     cmd: bash ./install.sh
 
-- name: Workstation | grub | Clone crossgrub
+- name: Workstation | grub | edit grub defaults
   become: true
   lineinfile:
-    path: /etc/defaults/grub
+    path: /etc/default/grub
     regexp: 'GRUB_THEME='
     line: 'GRUB_THEME=/boot/grub/themes/crossgrub/theme.txt'
 
