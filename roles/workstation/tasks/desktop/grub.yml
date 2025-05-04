@@ -10,7 +10,8 @@
   
 - name: Workstation | grub | Install theme
   become: true
-  shell: 
+  shell:
+    chdir: "/tmp/crossgrub"
     cmd: bash ./install.sh
 
 - name: Workstation | grub | Clone crossgrub
