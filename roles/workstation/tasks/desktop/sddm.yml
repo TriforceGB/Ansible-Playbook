@@ -4,7 +4,7 @@
     name: sddm
     enabled: true
 
-- name: Workstation | sddm | Clone sddm-astronaut-theme
+- name: Workstation | sddm | clone sddm-astronaut-theme
   become: true
   git:
     repo: https://github.com/keyitdev/sddm-astronaut-theme.git 
