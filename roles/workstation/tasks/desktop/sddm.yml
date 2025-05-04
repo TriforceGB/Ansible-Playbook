@@ -17,7 +17,7 @@
 - name: Workstation | sddm | copy fonts
   become: true
   copy:
-    src: /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/*
+    src: /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/
     dest: /usr/share/fonts/
     mode: 644
 
