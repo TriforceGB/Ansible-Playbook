@@ -1,12 +1,22 @@
 - name: Workstation | hyprland | Remove Unwanted Files
   block:
+    - name: Workstation | hyprland | Remove illogical-impulse-fonts-themes
+      become: true
+      pacman: 
+        state: absent
+        name: illogical-impulse-fonts-themes
+        
+    - name: Workstation | hyprland | Remove fish and foot
+      become: true
+      pacman: 
+        state: absent
+        name: 
+          - foot
+          - fish
+
     - name: Workstation | hyprland | Remove hypr config
       file:
         path: ~/.config/hypr
-        state: absent
-    - name: Workstation | hyprland | Remove ags config
-      file:
-        path: ~/.config/ags
         state: absent
     - name: Workstation | hyprland | Remove fish config
       file:
@@ -20,8 +30,3 @@
       file:
         path: ~/.config/zshrc.d
         state: absent
-
-#files I want to Remove
-
-# /hypr/
-# nautlilus

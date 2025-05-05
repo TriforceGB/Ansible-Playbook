@@ -16,8 +16,8 @@
       - qt6-multimedia
       - qt6-multimedia-ffmpeg 
     # Workstation Basics Needs
-      # - alacritty
-      - firefox # could remove just for zen depending on how long it takes for the dev team to fix some of my issues
+      - alacritty
+      - firefox # backup for Browser
       - vlc
       - bitwarden # Out of Date Right Now maybe use the AUR Bin
       - mission-center # Task Manager
