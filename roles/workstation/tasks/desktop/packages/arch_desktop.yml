@@ -6,8 +6,7 @@
       - uwsm
       - grub
       - timeshift
-      - nautilus
-      - gparted
+      - gnome-disk-utility
     # SDDM + Theme requirements
       - sddm
       - qt6
@@ -15,18 +14,21 @@
       - qt6-virtualkeyboard
       - qt6-multimedia
       - qt6-multimedia-ffmpeg 
+    # nautilus
+      - nautilus
     # Workstation Basics Needs
       - alacritty
       - firefox # backup for Browser
       - vlc
       - bitwarden # Out of Date Right Now maybe use the AUR Bin
       - mission-center # Task Manager
+      - gnome-text-editor
+      - zed
     # Gaming
       - steam
       - lutris
       - prismlauncher 
     # Coding and Creation
-      - code
       - audacity
       - gimp
       - libreoffice-fresh
@@ -36,6 +38,7 @@
       - obsidian
       - syncthing
       - qbittorrent
+      - vulkan-tools
 
 - name: Workstation | Packages | yay Workstation Packages Install
   become: false
@@ -46,6 +49,7 @@
       - vesktop-bin
       - archlinux-tweak-tool-git
       - localsend
+      - visual-studio-code-bin
     # Gaming
       - wootomation-appimage
     # Music
