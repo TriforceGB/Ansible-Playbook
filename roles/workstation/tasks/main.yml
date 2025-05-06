@@ -9,7 +9,7 @@
 - name: Workstation | Syncthing | Enabling on Startup
   become: true
   systemd_service:
-    name: syncthing@{{user}}
+    name: syncthing@{{username}}
     enabled: true
 
 - import_tasks: desktop/grub.yml
