@@ -17,6 +17,7 @@
       - vim
       - neovim
       - vi #for visudo could remove later
+      - github-cli
     # File Management and view
       - less
       - bat
