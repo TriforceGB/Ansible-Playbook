@@ -6,11 +6,9 @@
 - when: distribution == "Archlinux"
   import_tasks: packages/arch_desktop.yml
 
-- name: Workstation | Syncthing | Enabling on Startup
-  become: true
-  systemd_service:
-    name: syncthing@{{username}}
-    enabled: true
-
 - import_tasks: boot/grub.yml
 - import_tasks: boot/sddm.yml
+- import_tasks: packages/syncthing.yml
+- import_tasks: packages/vscode.yml
+- import_tasks: packages/zed.yml
+- import_tasks: packages/spotify.yml

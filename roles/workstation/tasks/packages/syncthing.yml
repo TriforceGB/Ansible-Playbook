@@ -1,0 +1,5 @@
+- name: Workstation | Syncthing | Enabling on Startup
+  become: true
+  systemd_service:
+    name: syncthing@{{username}}
+    enabled: true

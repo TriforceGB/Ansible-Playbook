@@ -1,6 +1,15 @@
 - name: Dotfiles | Workstation | hypr dotfiles
-  tags: zsh,dotfiles
   become: false
   shell:
     cmd: "stow hypr"
+    chdir: "{{ user_dir }}/.dotfiles/"
+- name: Dotfiles | Workstation | kitty dotfiles
+  become: false
+  shell:
+    cmd: "stow kitty"
+    chdir: "{{ user_dir }}/.dotfiles/"
+- name: Dotfiles | Workstation | fuzzel dotfiles
+  become: false
+  shell:
+    cmd: "stow fuzzel"
     chdir: "{{ user_dir }}/.dotfiles/"

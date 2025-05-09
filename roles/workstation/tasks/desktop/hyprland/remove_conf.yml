@@ -66,3 +66,7 @@
       file:
         path: ~/.config/kitty
         state: absent
+    - name: Workstation | hyprland | Remove fuzzel conf
+      file:
+        path: ~/.config/fuzzel
+        state: absent
