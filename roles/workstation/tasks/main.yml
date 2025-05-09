@@ -4,7 +4,7 @@
     - import_tasks: desktop/hyprland/remove_conf.yml
 
 - when: distribution == "Archlinux"
-  import_tasks: desktop/packages/arch_desktop.yml
+  import_tasks: packages/arch_desktop.yml
 
 - name: Workstation | Syncthing | Enabling on Startup
   become: true
@@ -12,5 +12,5 @@
     name: syncthing@{{username}}
     enabled: true
 
-- import_tasks: desktop/grub.yml
-- import_tasks: desktop/sddm.yml
+- import_tasks: boot/grub.yml
+- import_tasks: boot/sddm.yml

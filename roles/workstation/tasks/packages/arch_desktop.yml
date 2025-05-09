@@ -2,39 +2,42 @@
   become: true
   pacman:
     name: 
-    # Base Workstations Requirements
-      - uwsm
-      - grub
-      - timeshift
+    # Workstations Needs
+      - kitty
+      - firefox # backup for Browser
       - gnome-disk-utility
-    # SDDM + Theme requirements
+      - timeshift
+    # Boot
+      - grub
       - sddm
       - qt6
       - qt6-svg
       - qt6-virtualkeyboard
       - qt6-multimedia
       - qt6-multimedia-ffmpeg 
-    # nautilus
+    # Nautilus Extensions
       - nautilus
-    # Workstation Basics Needs
-      - alacritty
-      - firefox # backup for Browser
-      - vlc
-      - bitwarden # Out of Date Right Now maybe use the AUR Bin
-      - mission-center # Task Manager
+      - sushi
+      - nautilus-image-converter
+      - imagemagick
+    # Editor and Viewer
+      - audacity
+      - gimp
       - gnome-text-editor
+      - mission-center # Task Manager
+      - libreoffice-fresh
+      - loupe
+      - obs-studio
+      - vlc
       - zed
+    # Password Manager
+      - fuzzel
+      - rbw
     # Gaming
       - steam
       - lutris
       - prismlauncher 
-    # Coding and Creation
-      - audacity
-      - gimp
-      - libreoffice-fresh
-      - loupe
     # Others
-      - obs-studio
       - obsidian
       - syncthing
       - qbittorrent
@@ -44,17 +47,25 @@
   become: false
   yay:
     name: 
-    # Workstation Basics Needs
+    # Workstations Needs
       - zen-browser-bin
       - vesktop-bin
-      - archlinux-tweak-tool-git
-      - localsend
+    # Nautilus Extensions
+      - folder-color-nautilus
+      - nautilus-open-any-terminal
+    # Editor and Viewer
       - visual-studio-code-bin
+    # Password Manager
+      - bitwarden-bin
+      - rofi-rbw-git
     # Gaming
       - wootomation-appimage
     # Music
       - spotify
       - spicetify-cli
+    # Other
+      - archlinux-tweak-tool-git
+      - localsend
 
 
 # vm stuff
