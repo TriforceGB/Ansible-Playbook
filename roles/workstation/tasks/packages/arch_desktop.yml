@@ -42,6 +42,7 @@
       - syncthing
       - qbittorrent
       - vulkan-tools
+      - qalculate-gtk
 
 - name: Workstation | Packages | yay Workstation Packages Install
   become: false
