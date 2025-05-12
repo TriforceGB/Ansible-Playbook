@@ -9,6 +9,6 @@
 - import_tasks: boot/grub.yml
 - import_tasks: boot/sddm.yml
 - import_tasks: packages/syncthing.yml
-- import_tasks: packages/vscode.yml
-- import_tasks: packages/zed.yml
-- import_tasks: packages/spotify.yml
+# - import_tasks: packages/vscode.yml
+# - import_tasks: packages/zed.yml
+# - import_tasks: packages/spotify.yml
