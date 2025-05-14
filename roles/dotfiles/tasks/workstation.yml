@@ -13,3 +13,15 @@
   shell:
     cmd: "stow fuzzel"
     chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | Spotify dotfiles
+  become: false
+  shell:
+    cmd: "stow spotify"
+    chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | zed dotfiles
+  become: false
+  shell:
+    cmd: "stow zed"
+    chdir: "{{ user_dir }}/.dotfiles/"
