@@ -2,15 +2,15 @@
   block:
     - name: Workstation | hyprland | Remove illogical-impulse-fonts-themes
       become: true
-      pacman: 
+      pacman:
         state: absent
         name: illogical-impulse-fonts-themes
-        
+
     - name: Workstation | hyprland | Remove fish and foot
       become: true
-      pacman: 
+      pacman:
         state: absent
-        name: 
+        name:
           - foot
           - fish
 
@@ -22,7 +22,7 @@
         state: absent
     - name: Workstation | hyprland | Remove hypr keybinds conf
       file:
-        path: ~/.config/hpyr/hyprland/keybinds.conf
+        path: ~/.config/hypr/hyprland/keybinds.conf
         state: absent
 
 - name: Workstation | hyprland | Remove ags files
