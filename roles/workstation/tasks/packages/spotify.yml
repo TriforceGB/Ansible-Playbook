@@ -1,0 +1,11 @@
+- name: Workstation | Spotify | Permission Changed on /opt/spotify
+  become: true
+  file:
+    path: "/opt/spotify"
+    mode: a+wr
+- name: Workstation | Spotify | Permission Changed on /opt/spotify/Apps
+  become: true
+  file:
+    path: "/opt/spotify/Apps"
+    recurse: yes
+    mode: a+wr
