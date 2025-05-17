@@ -14,59 +14,11 @@
           - foot
           - fish
 
-- name: Workstation | hyprland | Remove hypr conf files
-  block:
-    - name: Workstation | hyprland | Remove hypr custom conf
-      file:
-        path: ~/.config/hypr/custom
-        state: absent
-    - name: Workstation | hyprland | Remove hypr keybinds conf
-      file:
-        path: ~/.config/hypr/hyprland/keybinds.conf
-        state: absent
-
-- name: Workstation | hyprland | Remove ags files
-  block:
-    - name: Workstation | hyprland | Remove ags user_options.jsonc
-      file:
-        path: ~/.config/ags/user_options.jsonc
-        state: absent
-    - name: Workstation | hyprland | Remove ags miscfunctions.js
-      file:
-        path: ~/.config/ags/modules/overview/miscfunctions.js
-        state: absent
-    - name: Workstation | hyprland | Remove ags booru.js
-      file:
-        path: ~/.config/ags/modules/sideleft/apis/booru.js
-        state: absent
-    - name: Workstation | hyprland | Remove ags waifu.js
-      file:
-        path: ~/.config/ags/modules/sideleft/apis/waifu.js
-        state: absent
-    - name: Workstation | hyprland | Remove ags quickscripts.js
-      file:
-        path: ~/.config/ags/modules/sideleft/tools/quickscripts.js
-        state: absent
-
-- name: Workstation | hyprland | Remove other dotfiles
-  block:
     - name: Workstation | hyprland | Remove fish conf
       file:
         path: ~/.config/fish
         state: absent
-    - name: Workstation | hyprland | Remove starship.toml
+    - name: Workstation | hyprland | Remove foot conf
       file:
-        path: ~/.config/starship.toml
-        state: absent
-    - name: Workstation | hyprland | Remove zshrc.d
-      file:
-        path: ~/.config/zshrc.d
-        state: absent
-    - name: Workstation | hyprland | Remove kitty conf
-      file:
-        path: ~/.config/kitty
-        state: absent
-    - name: Workstation | hyprland | Remove fuzzel conf
-      file:
-        path: ~/.config/fuzzel
+        path: ~/.config/foot
         state: absent

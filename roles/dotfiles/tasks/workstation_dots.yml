@@ -1,0 +1,79 @@
+- name: Dotfiles | Workstation | hypr dots
+  block:
+    - name: Dotfiles | Workstation | Remove hypr custom conf
+      file:
+        path: ~/.config/hypr/custom
+        state: absent
+    - name: Dotfiles | Workstation | Remove hypr keybinds conf
+      file:
+        path: ~/.config/hypr/hyprland/keybinds.conf
+        state: absent
+
+    - name: Dotfiles | Workstation | Remove ags user_options.jsonc
+      file:
+        path: ~/.config/ags/user_options.jsonc
+        state: absent
+    - name: Dotfiles | Workstation | Remove ags miscfunctions.js
+      file:
+        path: ~/.config/ags/modules/overview/miscfunctions.js
+        state: absent
+    - name: Dotfiles | Workstation | Remove ags booru.js
+      file:
+        path: ~/.config/ags/modules/sideleft/apis/booru.js
+        state: absent
+    - name: Dotfiles | Workstation | Remove ags waifu.js
+      file:
+        path: ~/.config/ags/modules/sideleft/apis/waifu.js
+        state: absent
+    - name: Dotfiles | Workstation | Remove ags quickscripts.js
+      file:
+        path: ~/.config/ags/modules/sideleft/tools/quickscripts.js
+        state: absent
+
+    - name: Dotfiles | Workstation | stow hypr
+      become: false
+      shell:
+        cmd: "stow hypr"
+        chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | kitty dotfiles
+  block:
+    - name: Dotfiles | Workstation | Remove kitty conf
+      file:
+        path: ~/.config/kitty
+        state: absent
+    - name: Dotfiles | Workstation | stow kitty
+      become: false
+      shell:
+        cmd: "stow kitty"
+        chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | fuzzel dotfiles
+  block:
+    - name: Workstation | hyprland | Remove fuzzel conf
+      file:
+        path: ~/.config/fuzzel
+        state: absent
+    - name: Dotfiles | Workstation | stow fuzzel
+      become: false
+      shell:
+        cmd: "stow fuzzel"
+        chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | Spotify dotfiles
+  block:
+    - name: Dotfiles | Workstation | stow spotify
+      become: false
+      shell:
+        cmd: "stow spotify"
+        chdir: "{{ user_dir }}/.dotfiles/"
+    - name: Dotfiles | Workstation | spicetify backup apply
+      become: false
+      shell:
+        cmd: "spicetify backup apply"
+
+- name: Dotfiles | Workstation | zed dotfiles
+  become: false
+  shell:
+    cmd: "stow zed"
+    chdir: "{{ user_dir }}/.dotfiles/"

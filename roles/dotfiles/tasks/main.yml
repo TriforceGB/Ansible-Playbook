@@ -12,8 +12,8 @@
     path: "{{user_dir}}/.config"
     state: directory
     mode: "0755"
-- import_tasks: base.yml
-- import_tasks: workstation.yml
+- import_tasks: base_dots.yml
+- import_tasks: workstation_dots.yml
   when: Setup == "1"
-- import_tasks: server.yml
+- import_tasks: server_dots.yml
   when: Setup == "2"

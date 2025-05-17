@@ -2,19 +2,19 @@
   tags: git
   git_config:
     name: user.name
-    value: "{{ username }}" 
-    scope: global 
+    value: "{{ username }}"
+    scope: global
 
-- name: Base | Git | Set Global Email
-  tags: git
-  git_config:
-    name: user.email
-    value: "Zach.Schultz.2.0.1@gmail.com" # My Email pull from Bitwarden Later?
-    scope: global 
+# - name: Base | Git | Set Global Email
+#   tags: git
+#   git_config:
+#     name: user.email
+#     value: "Zach.Schultz.2.0.1@gmail.com" # My Email pull from Bitwarden Later?
+#     scope: global
 
 - name: Base | Git | Set Global Default Branch
   tags: git
   git_config:
     name: init.defaultBranch
     value: main
-    scope: global 
+    scope: global

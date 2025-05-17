@@ -11,15 +11,14 @@
   community.crypto.openssh_keypair:
     path: "{{user_dir}}/.ssh/id_ssh_rsa"
     comment: "{{ username }}@{{ hostname }}"
-
-- name: Base | SSH | Copy Public Key #Change this ? use bitwardden
-  become: false
-  tags: ssh
-  ansible.posix.authorized_key:
-    user: "{{ username }}"
-    state: present
-    key: '{{ item }}'
-  with_file:
-    - ssh_key/zach-desktop
-    - ssh_key/zach-vivobook
-    - ssh_key/ubuntu-homeserver
+# - name: Base | SSH | Copy Public Key #Change this ? use bitwardden
+#   become: false
+#   tags: ssh
+#   ansible.posix.authorized_key:
+#     user: "{{ username }}"
+#     state: present
+#     key: '{{ item }}'
+#   with_file:
+#     - ssh_key/zach-desktop
+#     - ssh_key/zach-vivobook
+#     - ssh_key/ubuntu-homeserver

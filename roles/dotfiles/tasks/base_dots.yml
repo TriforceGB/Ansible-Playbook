@@ -1,0 +1,33 @@
+- name: Dotfiles | Base | zsh dotfiles
+  block:
+    - name: Dotfiles | Base | remove .zshrc
+      file:
+        path: ~/.zshrc
+        state: absent
+    - name: Dotfiles | Base | remove zshrc.d
+      file:
+        path: ~/.config/zshrc.d
+        state: absent
+    - name: Dotfiles | Base | remove starship.toml
+      file:
+        path: ~/.config/starship.toml
+        state: absent
+
+    - name: Dotfiles | Base | stow zsh
+      tags: zsh,dotfiles
+      become: false
+      shell:
+        cmd: "stow zsh"
+        chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Base | nvim dotfiles
+  become: false
+  shell:
+    cmd: "stow nvim"
+    chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Base | fastfetch dotfiles
+  become: false
+  shell:
+    cmd: "stow fastfetch"
+    chdir: "{{ user_dir }}/.dotfiles/"

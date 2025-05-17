@@ -2,32 +2,35 @@
   become: true
   tags: arch,package
   pacman:
-    name: 
-    # zsh + stuff needed for plugins
+    name:
+      # zsh + stuff needed for plugins
       - zsh
       - zoxide
-      - otf-firamono-nerd
-      - noto-fonts-cjk
-      - fzf
-      - fastfetch
       - eza
       - tmux
-    # Terminal Editors
+      # Fonts
+      - otf-firamono-nerd
+      - noto-fonts
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - fzfs
+      # Terminal Editors
       - nano
       - vim
       - neovim
       - vi #for visudo could remove later
       - github-cli
-    # File Management and view
+      # File Management and view
       - less
       - bat
       - superfile
-    # System View
+      # System View
       - htop
       - btop
-    # Coding Languages
+      # Coding Languages
       - python
-    # Extra
+      # Terminal programs
+      - fastfetch
       - tldr
       - cmatrix
       - tailscale
