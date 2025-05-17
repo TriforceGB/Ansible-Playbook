@@ -7,7 +7,7 @@
 source /etc/os-release
 
 if [ "$ID" == "arch" ]; then
-    sudo pacman -Syu
+    sudo pacman -Syu --noconfirm
     if ! pacman -Q ansible; then
     sudo pacman -S ansible --noconfirm
     fi
