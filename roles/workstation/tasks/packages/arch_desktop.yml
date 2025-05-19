@@ -1,26 +1,26 @@
 - name: Workstation | Packages | Pacman Workstation Packages Install
   become: true
   pacman:
-    name: 
-    # Workstations Needs
+    name:
+      # Workstations Needs
       - kitty
       - firefox # backup for Browser
       - gnome-disk-utility
       - timeshift
-    # Boot
+      # Boot
       - grub
       - sddm
       - qt6
       - qt6-svg
       - qt6-virtualkeyboard
       - qt6-multimedia
-      - qt6-multimedia-ffmpeg 
-    # Nautilus Extensions
+      - qt6-multimedia-ffmpeg
+      # Nautilus Extensions
       - nautilus
       - sushi
       - nautilus-image-converter
       - imagemagick
-    # Editor and Viewer
+      # Editor and Viewer
       - audacity
       - gimp
       - gnome-text-editor
@@ -30,14 +30,15 @@
       - obs-studio
       - vlc
       - zed
-    # Password Manager
+      # Password Manager
       - fuzzel
       - rbw
-    # Gaming
+      - rofi-rbw
+      # Gaming
       - steam
       - lutris
-      - prismlauncher 
-    # Others
+      - prismlauncher
+      # Others
       - obsidian
       - syncthing
       - qbittorrent
@@ -47,30 +48,27 @@
 - name: Workstation | Packages | yay Workstation Packages Install
   become: false
   yay:
-    name: 
-    # Workstations Needs
+    name:
+      # Workstations Needs
       - zen-browser-bin
       - vesktop-bin
-    # Nautilus Extensions
+      # Nautilus Extensions
       - folder-color-nautilus
       - nautilus-open-any-terminal
-    # Editor and Viewer
+      # Editor and Viewer
       - visual-studio-code-bin
-    # Password Manager
+      # Password Manager
       - bitwarden-bin
-      - rofi-rbw-git
-    # Gaming
+      # Gaming
       - wootomation-appimage
-    # Music
+      # Music
       - spotify
       - spicetify-cli
-    # Other
+      # Other
       - archlinux-tweak-tool-git
       - localsend
-
-
 # vm stuff
-# emulators 
+# emulators
 # 3d printer stuff
 # https://openrazer.github.io/#features
 # https://polychromatic.app/features/

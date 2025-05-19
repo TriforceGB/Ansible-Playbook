@@ -77,3 +77,9 @@
   shell:
     cmd: "stow zed"
     chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | discord Dotfiles
+  become: false
+  shell:
+    cmd: "stow discord"
+    chdir: "{{ user_dir }}/.dotfiles/"
