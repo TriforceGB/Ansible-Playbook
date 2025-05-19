@@ -4,7 +4,6 @@
     name:
       # Workstations Needs
       - kitty
-      - firefox # backup for Browser
       - gnome-disk-utility
       - timeshift
       # Boot
