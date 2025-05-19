@@ -11,6 +11,14 @@
   community.crypto.openssh_keypair:
     path: "{{user_dir}}/.ssh/id_ssh_rsa"
     comment: "{{ username }}@{{ hostname }}"
+
+- name: Base | SSH | enable sshd
+  become: true
+  tags: ssh
+  service:
+    name: sshd.service
+    state: started
+    enabled: yes
 # - name: Base | SSH | Copy Public Key #Change this ? use bitwardden
 #   become: false
 #   tags: ssh

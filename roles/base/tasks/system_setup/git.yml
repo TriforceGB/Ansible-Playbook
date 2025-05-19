@@ -18,3 +18,10 @@
     name: init.defaultBranch
     value: main
     scope: global
+
+- name: Base | Git | Set Global Default editor
+  tags: git
+  git_config:
+    name: core.editor
+    value: nvim
+    scope: global
