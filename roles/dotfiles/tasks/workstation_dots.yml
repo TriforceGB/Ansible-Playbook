@@ -66,6 +66,11 @@
 
 - name: Dotfiles | Workstation | Spotify dotfiles
   block:
+    - name: Dotfiles | Create spotify/
+      file:
+        path: "{{user_dir}}/.config/spotify"
+        state: directory
+        mode: "0755"
     - name: Dotfiles | Workstation | stow spotify
       become: false
       shell:
@@ -83,7 +88,14 @@
     chdir: "{{ user_dir }}/.dotfiles/"
 
 - name: Dotfiles | Workstation | Discord Dotfiles
-  become: false
-  shell:
-    cmd: "stow discord"
-    chdir: "{{ user_dir }}/.dotfiles/"
+  block:
+    - name: Dotfiles | Create vesktop/
+      file:
+        path: "{{user_dir}}/.config/vesktop"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Stow Discord
+      become: false
+      shell:
+        cmd: "stow discord"
+        chdir: "{{ user_dir }}/.dotfiles/"
