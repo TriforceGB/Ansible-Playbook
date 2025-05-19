@@ -1,4 +1,4 @@
-- name: Dotfiles | Workstation | hypr dots
+- name: Dotfiles | Workstation | hypr dots # need to make this only run when the hyprland flag is true but i mean that isn't made yet to later ig
   block:
     - name: Dotfiles | Workstation | Remove hypr custom conf
       file:
@@ -28,6 +28,10 @@
     - name: Dotfiles | Workstation | Remove ags quickscripts.js
       file:
         path: ~/.config/ags/modules/sideleft/tools/quickscripts.js
+        state: absent
+    - name: Dotfiles | Workstation | Remove ags fuzzel.ini template
+      file:
+        path: ~/.config/ags/scripts/templates/fuzzel/fuzzel.ini
         state: absent
 
     - name: Dotfiles | Workstation | stow hypr
@@ -72,13 +76,13 @@
       shell:
         cmd: "spicetify backup apply"
 
-- name: Dotfiles | Workstation | zed dotfiles
+- name: Dotfiles | Workstation | Zed dotfiles
   become: false
   shell:
     cmd: "stow zed"
     chdir: "{{ user_dir }}/.dotfiles/"
 
-- name: Dotfiles | Workstation | discord Dotfiles
+- name: Dotfiles | Workstation | Discord Dotfiles
   become: false
   shell:
     cmd: "stow discord"
