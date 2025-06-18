@@ -102,6 +102,46 @@
 
 - name: Dotfiles | Workstation | Gimp Dotfiles
   block:
+    - name: Dotfiles | Create applications/
+      file:
+        path: "{{user_dir}}/.local/share/applications"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 16x16/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/16x16/apps"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 32x32/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/32x32/apps"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 48x48/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/48x48/apps"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 64x64/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/64x64/apps"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 128x128/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/128x128/apps"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 256x256/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/256x256/apps"
+        state: directory
+        mode: "0755"
+    - name: Dotfiles | Workstation | Create 512x512/apps/
+      file:
+        path: "{{user_dir}}/.local/share/icons/hicolor/512x512/apps"
+        state: directory
+        mode: "0755"
     - name: Dotfiles | Workstation | Stow Gimp
       become: false
       shell:
