@@ -1,3 +1,10 @@
+- name: Base | Git | Set Global Signingkey
+  tags: git
+  git_config:
+    name: user.signingkey
+    value: "Zach.Schultz.2.0.1@gmail.com" # My Email pull from Bitwarden Later?
+    scope: global
+
 - name: Base | Git | Set Global Username
   tags: git
   git_config:
@@ -5,12 +12,12 @@
     value: "{{ username }}"
     scope: global
 
-# - name: Base | Git | Set Global Email
-#   tags: git
-#   git_config:
-#     name: user.email
-#     value: "Zach.Schultz.2.0.1@gmail.com" # My Email pull from Bitwarden Later?
-#     scope: global
+- name: Base | Git | Set Global Email
+  tags: git
+  git_config:
+    name: user.email
+    value: "Zach.Schultz.2.0.1@gmail.com" # My Email pull from Bitwarden Later?
+    scope: global
 
 - name: Base | Git | Set Global Default Branch
   tags: git
@@ -24,4 +31,11 @@
   git_config:
     name: core.editor
     value: nvim
+    scope: global
+
+- name: Base | Git | Set Global Commit to use GPG Keys
+  tags: git
+  git_config:
+    name: commit.gpgsign
+    value: true
     scope: global
