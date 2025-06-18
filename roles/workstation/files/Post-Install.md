@@ -18,6 +18,7 @@ Update Extensions and Mods
 ##### Dark Reader
 Toggle Current Site **Shift+Alt+D**
 
+
 ### Extensions
 #### Enhancer for YouTube
 ```json
@@ -26,6 +27,9 @@ Toggle Current Site **Shift+Alt+D**
 ### Git
 - Log into Github Using the Github CLI
 - Add your GPG Key to enable Commits
+``` bash
+	gpg --import <keyfile.gpg>
+```
 ### Zed
 - Zed Addon Out of scope I think for V1  (ya its just doing Zed Dots out of Scoop here but 100% possible with Stow)
 ###  VSCode

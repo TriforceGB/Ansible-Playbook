@@ -99,3 +99,11 @@
       shell:
         cmd: "stow discord"
         chdir: "{{ user_dir }}/.dotfiles/"
+
+- name: Dotfiles | Workstation | Gimp Dotfiles
+  block:
+    - name: Dotfiles | Workstation | Stow Gimp
+      become: false
+      shell:
+        cmd: "stow gimp"
+        chdir: "{{ user_dir }}/.dotfiles/"
