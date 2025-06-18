@@ -1,6 +1,7 @@
 - hosts: localhost
   tags: always
   become: false
+  no_log: true
   pre_tasks:
     - import_tasks: Pre-Tasks/whoami.yml
     - import_tasks: Pre-Tasks/whoami_debug.yml
