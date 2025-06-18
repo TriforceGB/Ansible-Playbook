@@ -54,6 +54,7 @@
       # Nautilus Extensions
       - folder-color-nautilus
       - nautilus-open-any-terminal
+      - nautilus-admin-gtk4
       # Editor and Viewer
       - visual-studio-code-bin
       # Password Manager
@@ -66,6 +67,24 @@
       # Other
       - archlinux-tweak-tool-git
       - localsend
+      - parabolic
+
+- name: Workstation | Packages | AMD Packages Install
+  when: gpu_vendor == "amd"
+  become: true
+  pacman:
+    name:
+      - mesa
+      - amd-ucode
+      - vulkan-radeon
+- name: Workstation | Packages | Intel Packages Install
+  when: gpu_vendor == "intel"
+  become: true
+  pacman:
+    name:
+      - mesa
+      - intel-ucode
+      - vulkan-intel
 # vm stuff
 # emulators
 # 3d printer stuff

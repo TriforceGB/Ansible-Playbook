@@ -5,3 +5,20 @@
     user_dir: "{{ ansible_env.HOME }}"
     distribution: "{{ ansible_distribution }}"
     hostname: "{{ ansible_hostname }}"
+
+- name: Get GPU info
+  shell: lspci | grep -Ei 'vga|3d'
+  register: gpu_info
+
+- name: Set GPU vendor fact
+  set_fact:
+    gpu_vendor: >-
+      {% if gpu_info.stdout is search('NVIDIA', ignorecase=True) %}
+        nvidia
+      {% elif gpu_info.stdout is search('AMD|ATI|Advanced Micro Devices', ignorecase=True) %}
+        amd
+      {% elif gpu_info.stdout is search('Intel', ignorecase=True) %}
+        intel
+      {% else %}
+        unknown
+      {% endif %}
