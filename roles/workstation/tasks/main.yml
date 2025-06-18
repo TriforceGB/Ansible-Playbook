@@ -11,3 +11,9 @@
 - import_tasks: packages/syncthing.yml
 - import_tasks: packages/spotify.yml
 # - import_tasks: packages/vscode.yml
+
+- name: Workstation | Add Post Install Guide
+  tags: arch,pacman
+  copy:
+    src: files/Post-Install.md
+    dest: Post-Install.md
