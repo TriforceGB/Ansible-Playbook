@@ -16,7 +16,9 @@
   become: false
   when: distribution == "Archlinux"
   shell:
-    cmd: echo -e "n\nn\ny\n" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh") #Press N 2 times while Script is Running
+    cmd: echo -e "n\nn\ny\n" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh") #Press N 2 times then Y 1 time while Script is Running
+    async: 3600
+    poll: 60
 
 - name: Workstation | uwsm | Install uwsm
   become: true
