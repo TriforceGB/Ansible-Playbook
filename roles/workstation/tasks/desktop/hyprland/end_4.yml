@@ -1,8 +1,22 @@
+# - name: Workstation | Hyprland | Clone End-4
+#   become: false
+#   tags: Hyprland
+#   git:
+#     repo: https://github.com/end-4/dots-hyprland
+#     dest: "{{user_dir}}/End-4"
+#     clone: yes
+
+# - name: Workstation | Hyprland | Remove End-4 build directory
+#   tags: Hyprland
+#   file:
+#     path: "{{user_dir}}/End-4"
+#     state: absent
+
 - name: Workstation | hyprland | downloading end-4 dots
   become: false
   when: distribution == "Archlinux"
   shell:
-    cmd: echo -e "n\nn\n\n" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh") #Press N 2 times while Script is Running
+    cmd: echo -e "n\nn\ny\n" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh") #Press N 2 times while Script is Running
 
 - name: Workstation | uwsm | Install uwsm
   become: true
