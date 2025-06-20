@@ -29,12 +29,12 @@
         cmd: makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-basic"
 
-    - name: Remove fish from depends illogical-impulse-fonts-themes
+    - name: Replace fish with zsh from depends illogical-impulse-fonts-themes
       tags: Hyprland
       replace:
-        path: "{{user_dir}}/End-4/arch-packages/illogical-impulse-fonts-themes"
+        path: "{{user_dir}}/End-4/arch-packages/illogical-impulse-fonts-themes/PKGBUILD"
         regexp: "fish"
-        state: absent
+        replace: "zsh"
     - name: Workstation | Hyprland | Install illogical-impulse-fonts-themes
       become: false
       tags: Hyprland
