@@ -68,6 +68,7 @@
       - archlinux-tweak-tool-git
       - localsend
       - parabolic
+      - upscayl-bin
 
 - name: Workstation | Packages | AMD Packages Install
   when: gpu_vendor == "amd"
