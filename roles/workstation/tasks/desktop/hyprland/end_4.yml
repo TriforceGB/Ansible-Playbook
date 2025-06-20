@@ -237,7 +237,7 @@
   become: false
   tags: Hyprland
   shell:
-    cmd: bash -c 'kwriteconfig6 --file kdeglobals --groups KDE --key widgetStyle Darkly'
+    cmd: bash -c 'kwriteconfig6 --file kdeglobals --group KDE --key widgetStyle Darkly'
 
 - name: Workstation | Hyprland | Create a bunch of directories
   become: false
