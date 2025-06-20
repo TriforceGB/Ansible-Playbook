@@ -227,17 +227,17 @@
   become: false
   tags: Hyprland
   shell:
-    cmd: gsettings set org.gnome.desktop.interface font-name Rubik 11
+    cmd: bash -c 'gsettings set org.gnome.desktop.interface font-name Rubik 11'
 - name: Workstation | Hyprland | gsettings color-scheme prefer-dark
   become: false
   tags: Hyprland
   shell:
-    cmd: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    cmd: bash -c 'gsettings set org.gnome.desktop.interface color-scheme prefer-dark'
 - name: Workstation | Hyprland | kwriteconfig Darkly
   become: false
   tags: Hyprland
   shell:
-    cmd: kwriteconfig6 --file kdeglobals --groups KDE --key widgetStyle Darkly
+    cmd: bash -c 'kwriteconfig6 --file kdeglobals --groups KDE --key widgetStyle Darkly'
 
 - name: Workstation | Hyprland | Create a bunch of directories
   become: false
