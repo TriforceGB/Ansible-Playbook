@@ -226,17 +226,17 @@
 - name: Workstation | Hyprland | gsettings set font
   become: false
   tags: Hyprland
-  command:
+  shell:
     cmd: gsettings set org.gnome.desktop.interface font-name Rubik 11
 - name: Workstation | Hyprland | gsettings color-scheme prefer-dark
   become: false
   tags: Hyprland
-  command:
+  shell:
     cmd: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 - name: Workstation | Hyprland | kwriteconfig Darkly
   become: false
   tags: Hyprland
-  command:
+  shell:
     cmd: kwriteconfig6 --file kdeglobals --groups KDE --key widgetStyle Darkly
 
 - name: Workstation | Hyprland | Create a bunch of directories
