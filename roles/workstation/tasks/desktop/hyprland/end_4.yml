@@ -220,8 +220,8 @@
     state: directory
 
 # Rsync and cp
-- name: Sync .config from /test/.config/ to ~/.config
-  become: yes
+- name: Sync .config from ~/End-4/.config/ to ~/.config
+  become: false
   ansible.posix.synchronize:
     src: "{{user_dir}}/End-4/.config/"
     dest: "{{user_dir}}/.config/"
