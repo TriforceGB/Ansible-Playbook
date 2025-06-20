@@ -9,17 +9,15 @@
 
 - name: Workstation | Hyprland | Install End-4 Packages
   block:
-    - name: Workstation | Hyprland | Install illogical-impulse-audio
+    - name: Workstation | Hyprland | Install illogical-impulse-audio 1
       become: false
       tags: Hyprland
       shell:
-        cmd: |
-          cd "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
-          source PKGBUILD
-          yay -S --noconfirm --needed --asdeps "${depends[@]}"
-          makepkg -si --noconfirm --needed
-        args:
-          chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
 
     - name: Workstation | Hyprland | Install illogical-impulse-backlight
       become: false
@@ -208,11 +206,12 @@
     regexp: "i2c-dev"
     state: absent
 
-- name: Workstation | Hyprland | deactivate the .venv
+- name: Workstation | Hyprland | Add i2c-dev to i2c-dev.conf
   become: true
   tags: Hyprland
-  command:
-    cmd: echo i2c-dev | tee /etc/modules-load.d/i2c-dev.conf
+  copy:
+    dest: /etc/modules-load.d/i2c-dev.conf
+    content: "i2c-dev"
 
 - name: Workstation | Hyprland | Install archlinux-xdg-menu
   become: true
