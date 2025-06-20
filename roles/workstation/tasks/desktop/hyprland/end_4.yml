@@ -167,32 +167,17 @@
         path: "{{user_dir}}/.config/quickshell/.venv"
         state: directory
 
-    - name: Workstation | Hyprland | Create the VENV
+    - name: Workstation | Hyprland | Download Packages into .venv
       become: false
       tags: Hyprland
-      command:
-        cmd: uv venv --prompt .venv -p 3.12
+      shell:
+        cmd: |
+          bash -c '
+          uv venv --prompt .venv -p 3.12
+          source activate
+          uv pip install -r requirements.txt
+          deactivate'
         chdir: "{{user_dir}}/.config/quickshell/"
-
-    - name: Workstation | Hyprland | Activate the .venv
-      become: false
-      tags: Hyprland
-      shell:
-        cmd: bash -c 'source activate'
-        chdir: "{{user_dir}}/.config/quickshell/.venv/bin/"
-
-    - name: Workstation | Hyprland | Install requirements.txt
-      become: false
-      tags: Hyprland
-      command:
-        cmd: uv pip install -r requirements.txt
-        chdir: "{{user_dir}}/End-4/scriptdata/"
-
-    - name: Workstation | Hyprland | deactivate the .venv
-      become: false
-      tags: Hyprland
-      shell:
-        cmd: shell -c 'deactivate'
 
 - name: Workstation | Hyprland | Install plasma-browser-integration
   become: true
