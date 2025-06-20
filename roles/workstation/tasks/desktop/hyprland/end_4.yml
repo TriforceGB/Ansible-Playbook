@@ -5,6 +5,7 @@
     repo: https://github.com/end-4/dots-hyprland
     dest: "{{user_dir}}/End-4"
     clone: yes
+    force: yes
 
 - name: Workstation | Hyprland | Install End-4 Packages
   block:
