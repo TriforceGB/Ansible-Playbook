@@ -12,11 +12,11 @@
     - name: Workstation | Hyprland | Install illogical-impulse-audio
       become: false
       tags: Hyprland
-      command:
-        cmd:
-          - source PKGBUILD
-          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
-          - makepkg -si --noconfirm --needed
+      shell:
+        cmd: |
+          source PKGBUILD
+          yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
 
     - name: Workstation | Hyprland | Install illogical-impulse-backlight
