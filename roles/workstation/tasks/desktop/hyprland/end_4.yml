@@ -1,26 +1,248 @@
-# - name: Workstation | Hyprland | Clone End-4
-#   become: false
-#   tags: Hyprland
-#   git:
-#     repo: https://github.com/end-4/dots-hyprland
-#     dest: "{{user_dir}}/End-4"
-#     clone: yes
-
-# - name: Workstation | Hyprland | Remove End-4 build directory
-#   tags: Hyprland
-#   file:
-#     path: "{{user_dir}}/End-4"
-#     state: absent
-
-- name: Workstation | hyprland | downloading end-4 dots
+- name: Workstation | Hyprland | Clone End-4
   become: false
-  when: distribution == "Archlinux"
-  shell:
-    cmd: echo -e "n\nn\ny\n" | bash <(curl -s "https://end-4.github.io/dots-hyprland-wiki/setup.sh") #Press N 2 times then Y 1 time while Script is Running
-    async: 3600
-    poll: 60
+  tags: Hyprland
+  git:
+    repo: https://github.com/end-4/dots-hyprland
+    dest: "{{user_dir}}/End-4"
+    clone: yes
 
-- name: Workstation | uwsm | Install uwsm
+- name: Workstation | Hyprland | Install End-4 Packages
+  block:
+    - name: Workstation | Hyprland | Install illogical-impulse-audio
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-backlight
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-backlight"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-basic
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-basic"
+
+    - name: Remove fish from depends illogical-impulse-fonts-themes
+      tags: Hyprland
+      replace:
+        path: "{{user_dir}}/End-4/arch-packages/illogical-impulse-fonts-themes"
+        regexp: "fish"
+        state: absent
+    - name: Workstation | Hyprland | Install illogical-impulse-fonts-themes
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-fonts-themes"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-kde
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-kde"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-portal
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-portal"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-python
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-python"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-screencapture
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-screencapture"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-toolkit
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-toolkit"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-widgets
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-widgets"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-hyprland
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-hyprland"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-microtex-git
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-microtex-git"
+
+    - name: Workstation | Hyprland | Install illogical-impulse-bibata-modern-classic-bin
+      become: false
+      tags: Hyprland
+      command:
+        cmd: makepkg -si --noconfirm --needed
+        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-bibata-modern-classic-bin"
+
+- name: Workstation | Hyprland | python-packages
+  block:
+    - name: Workstation | Hyprland | Create then .venv Folder
+      become: false
+      tags: Hyprland
+      file:
+        path: "{{user_dir}}/.config/quickshell/.venv"
+        state: directory
+
+    - name: Workstation | Hyprland | Create the VENV
+      become: false
+      tags: Hyprland
+      command:
+        cmd: uv venv --prompt .venv -p 3.12
+        chdir: "{{user_dir}}/.config/quickshell/"
+
+    - name: Workstation | Hyprland | Activate the .venv
+      become: false
+      tags: Hyprland
+      command:
+        cmd: source activate
+        chdir: "{{user_dir}}/.config/quickshell/.venv/bin/"
+
+    - name: Workstation | Hyprland | Install requirements.txt
+      become: false
+      tags: Hyprland
+      command:
+        cmd: uv pip install -r requirements.txt
+        chdir: "{{user_dir}}/End-4/scriptdata/"
+
+    - name: Workstation | Hyprland | deactivate the .venv
+      become: false
+      tags: Hyprland
+      command:
+        cmd: deactivate
+
+- name: Workstation | Hyprland | Install plasma-browser-integration
+  become: true
+  tags: Hyprland
+  pacman:
+    name: plasma-browser-integration
+
+- name: Workstation | Hyprland | Add User Groups
+  become: true
+  tags: Hyprland
+  user:
+    name: "{{username}}"
+    append: yes
+    groups:
+      - video
+      - i2c
+      - input
+
+- name: Remove fish from depends illogical-impulse-fonts-themes
+  tags: Hyprland
+  become: true
+  replace:
+    path: "/etc/modules-load.d/i2c-dev.conf"
+    regexp: "i2c-dev"
+    state: absent
+
+- name: Workstation | Hyprland | deactivate the .venv
+  become: true
+  tags: Hyprland
+  command:
+    cmd: echo i2c-dev | tee /etc/modules-load.d/i2c-dev.conf
+
+- name: Workstation | Hyprland | Install archlinux-xdg-menu
+  become: true
+  tags: Hyprland
+  pacman:
+    name: archlinux-xdg-menu
+
+- name: Workstation | Hyprland | enable ydotool
+  become: false
+  tags: Hyprland
+  command:
+    cmd: systemctl --user enable ydotool --now
+
+- name: Workstation | Hyprland | enable bluetooth
+  become: true
+  tags: Hyprland
+  service:
+    name: bluetooth
+    state: started
+    enabled: yes
+
+- name: Workstation | Hyprland | gsettings set font
+  become: false
+  tags: Hyprland
+  command:
+    cmd: gsettings set org.gnome.desktop.interface font-name Rubik 11
+- name: Workstation | Hyprland | gsettings color-scheme prefer-dark
+  become: false
+  tags: Hyprland
+  command:
+    cmd: gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+- name: Workstation | Hyprland | kwriteconfig Darkly
+  become: false
+  tags: Hyprland
+  command:
+    cmd: kwriteconfig6 --file kdeglobals --groups KDE --key widgetStyle Darkly
+
+- name: Workstation | Hyprland | Create a bunch of directories
+  become: false
+  tags: Hyprland
+  file:
+    path:
+      - "{{user_dir}}/.config/"
+      - "{{user_dir}}/.local/bin/"
+      - "{{user_dir}}/.local/share/"
+      - "{{user_dir}}/.cache/"
+    state: directory
+
+# Rsync and cp
+- name: Sync .config from /test/.config/ to ~/.config
+  become: yes
+  posix.synchronize:
+    src: "{{user_dir}}/End-4/.config/"
+    dest: "{{user_dir}}/.config/"
+    recursive: yes
+    archive: yes
+    delete: no
+
+# rsync -av /test/.config/ ~/.config/
+
+- name: Workstation | Hyprland | Remove End-4 build directory
+  tags: Hyprland
+  file:
+    path: "{{user_dir}}/End-4"
+    state: absent
+
+- name: Workstation | Hyprland | Install uwsm
   become: true
   pacman:
     name: uwsm
+# - name: Workstation | hyprland | downloading end-4 dots
+#   become: false
+# when: distribution == "Archlinux"
+# shell:
+#   cmd: timeout 3600s bash -c 'echo -e "n\nn\ny\n" | bash <(curl -s "https:/end-4.github.io/dots-hyprland-wiki/setup.sh")' #Press N 2 times then Y 1 time while Script is Running also dies if it takes an hour

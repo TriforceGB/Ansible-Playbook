@@ -29,6 +29,7 @@
       - btop
       # Coding Languages
       - python
+      - uv
       # Terminal programs
       - fastfetch
       - tldr
