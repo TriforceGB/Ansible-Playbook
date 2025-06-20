@@ -12,21 +12,30 @@
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
 
     - name: Workstation | Hyprland | Install illogical-impulse-backlight
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-backlight"
 
     - name: Workstation | Hyprland | Install illogical-impulse-basic
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-basic"
 
     - name: Replace fish with zsh from depends illogical-impulse-fonts-themes
@@ -39,70 +48,100 @@
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-fonts-themes"
 
     - name: Workstation | Hyprland | Install illogical-impulse-kde
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-kde"
 
     - name: Workstation | Hyprland | Install illogical-impulse-portal
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-portal"
 
     - name: Workstation | Hyprland | Install illogical-impulse-python
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-python"
 
     - name: Workstation | Hyprland | Install illogical-impulse-screencapture
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-screencapture"
 
     - name: Workstation | Hyprland | Install illogical-impulse-toolkit
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-toolkit"
 
     - name: Workstation | Hyprland | Install illogical-impulse-widgets
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-widgets"
 
     - name: Workstation | Hyprland | Install illogical-impulse-hyprland
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-hyprland"
 
     - name: Workstation | Hyprland | Install illogical-impulse-microtex-git
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-microtex-git"
 
     - name: Workstation | Hyprland | Install illogical-impulse-bibata-modern-classic-bin
       become: false
       tags: Hyprland
       command:
-        cmd: makepkg -si --noconfirm --needed
+        cmd:
+          - source PKGBUILD
+          - yay -S --noconfirm --needed --asdeps "${depends[@]}"
+          - makepkg -si --noconfirm --needed
         chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-bibata-modern-classic-bin"
 
 - name: Workstation | Hyprland | python-packages
