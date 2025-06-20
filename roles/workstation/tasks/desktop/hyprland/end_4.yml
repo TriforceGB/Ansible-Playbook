@@ -174,7 +174,7 @@
         cmd: |
           bash -c '
           uv venv --prompt .venv -p 3.12
-          source /.venv/bin/activate
+          source .venv/bin/activate
           uv pip install -r {{user_dir}}/End-4/scriptdata/requirements.txt
           deactivate'
         chdir: "{{user_dir}}/.config/quickshell/"
