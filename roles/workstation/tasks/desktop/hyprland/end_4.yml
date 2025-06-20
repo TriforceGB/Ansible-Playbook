@@ -177,8 +177,8 @@
     - name: Workstation | Hyprland | Activate the .venv
       become: false
       tags: Hyprland
-      command:
-        cmd: source activate
+      shell:
+        cmd: bash -c 'source activate'
         chdir: "{{user_dir}}/.config/quickshell/.venv/bin/"
 
     - name: Workstation | Hyprland | Install requirements.txt
@@ -191,8 +191,8 @@
     - name: Workstation | Hyprland | deactivate the .venv
       become: false
       tags: Hyprland
-      command:
-        cmd: deactivate
+      shell:
+        cmd: shell -c 'deactivate'
 
 - name: Workstation | Hyprland | Install plasma-browser-integration
   become: true
@@ -210,14 +210,6 @@
       - video
       - i2c
       - input
-
-- name: Remove fish from depends illogical-impulse-fonts-themes
-  tags: Hyprland
-  become: true
-  replace:
-    path: "/etc/modules-load.d/i2c-dev.conf"
-    regexp: "i2c-dev"
-    state: absent
 
 - name: Workstation | Hyprland | Add i2c-dev to i2c-dev.conf
   become: true
