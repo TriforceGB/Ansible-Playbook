@@ -14,10 +14,12 @@
       tags: Hyprland
       shell:
         cmd: |
+          cd "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
           source PKGBUILD
           yay -S --noconfirm --needed --asdeps "${depends[@]}"
           makepkg -si --noconfirm --needed
-        chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
+        args:
+          chdir: "{{user_dir}}/End-4/arch-packages/illogical-impulse-audio"
 
     - name: Workstation | Hyprland | Install illogical-impulse-backlight
       become: false
